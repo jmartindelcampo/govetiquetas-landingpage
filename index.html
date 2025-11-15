@@ -16,6 +16,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             background-color: #f7f3ef;
             font-family: 'Roboto', sans-serif;
@@ -56,11 +62,6 @@
         .carousel-control-prev-icon,
         .carousel-control-next-icon {
             filter: invert(50%);
-        }
-
-        .mask-custom {
-            backdrop-filter: blur(5px);
-            background-color: rgba(10, 38, 71, 0.85);
         }
 
         .navbar-brand {
@@ -258,22 +259,18 @@
         /* Colores específicos por red social */
         .social-icons li:nth-child(1) a:before {
             background: #1877f2;
-            /* Facebook */
         }
 
         .social-icons li:nth-child(2) a:before {
             background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-            /* Instagram */
         }
 
         .social-icons li:nth-child(3) a:before {
             background: #25D366;
-            /* WhatsApp */
         }
 
         .social-icons li:nth-child(4) a:before {
             background: #0077b5;
-            /* LinkedIn */
         }
 
         /* Social icons in navbar */
@@ -410,6 +407,253 @@
             font-size: 2.5em;
         }
 
+        /* ========== HERO SECTION CON GLASSMORPHISM ========== */
+        #inicio {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #0A2647 0%, #205295 50%, #0A2647 100%);
+            overflow: hidden;
+        }
+
+        #inicio::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .hero-container {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 20px 40px;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .hero-box {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            min-height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 40px 20px;
+            transition: 0.5s;
+        }
+
+        .hero-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50px;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(315deg, var(--primary-silver), var(--secondary-blue));
+            border-radius: 15px;
+            transform: skewX(15deg);
+            transition: 0.5s;
+        }
+
+        .hero-box::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50px;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(315deg, var(--primary-silver), var(--secondary-blue));
+            border-radius: 15px;
+            transform: skewX(15deg);
+            transition: 0.5s;
+            filter: blur(30px);
+        }
+
+        .hero-box:hover::before,
+        .hero-box:hover::after {
+            transform: skewX(0deg);
+            left: 20px;
+            width: calc(100% - 40px);
+        }
+
+        .hero-box .hero-span {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 5;
+            pointer-events: none;
+        }
+
+        .hero-box .hero-span::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            opacity: 0;
+            transition: 0.1s;
+            animation: animate 2s ease-in-out infinite;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .hero-box:hover .hero-span::before {
+            top: -50px;
+            left: 50px;
+            width: 100px;
+            height: 100px;
+            opacity: 1;
+        }
+
+        .hero-box .hero-span::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            opacity: 0;
+            transition: 0.5s;
+            animation: animate 2s ease-in-out infinite;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            animation-delay: -1s;
+        }
+
+        .hero-box:hover .hero-span::after {
+            bottom: -50px;
+            right: 50px;
+            width: 100px;
+            height: 100px;
+            opacity: 1;
+        }
+
+        @keyframes animate {
+            0%, 100% {
+                transform: translateY(10px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            left: 0;
+            padding: 50px 60px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            z-index: 1;
+            transition: 0.5s;
+            color: #fff;
+            text-align: left;
+        }
+
+        .hero-box:hover .hero-content {
+            left: -25px;
+            padding: 60px 70px;
+        }
+
+        .hero-content .brand-title {
+            font-size: 3.5em;
+            color: #fff;
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-content .brand-subtitle {
+            color: var(--accent-orange);
+            font-size: 1.2em;
+            font-weight: 500;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-content p {
+            font-size: 1.15em;
+            margin-bottom: 25px;
+            line-height: 1.6em;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .hero-content .btn-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            box-shadow: unset;
+        }
+
+        .hero-content .btn-custom {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1em;
+            padding: 14px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary-custom {
+            background: var(--accent-orange);
+            color: #fff;
+        }
+
+        .btn-primary-custom:hover {
+            background: #ff8555;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(255, 107, 53, 0.4);
+        }
+
+        .btn-secondary-custom {
+            background: transparent;
+            color: #fff;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .btn-secondary-custom:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-custom i {
+            margin-right: 8px;
+        }
+
+        /* ========== RESPONSIVE ========== */
         @media (max-width: 768px) {
             .hero-title {
                 font-size: 2rem;
@@ -431,6 +675,43 @@
             .advantage-card {
                 height: 380px;
             }
+
+            .hero-content {
+                padding: 40px 30px;
+            }
+
+            .hero-box:hover .hero-content {
+                left: 0;
+                padding: 45px 35px;
+            }
+
+            .hero-content .brand-title {
+                font-size: 2.2em;
+            }
+
+            .hero-content .brand-subtitle {
+                font-size: 1em;
+            }
+
+            .hero-content p {
+                font-size: 1em;
+            }
+
+            .hero-content .btn-group {
+                flex-direction: column;
+            }
+
+            .hero-content .btn-custom {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .hero-box::before,
+            .hero-box::after {
+                left: 20px;
+                width: calc(100% - 40px);
+                transform: skewX(0deg);
+            }
         }
     </style>
 </head>
@@ -441,7 +722,6 @@
         <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-0">
             <div class="container">
                 <a class="navbar-brand text-white" href="#!">
-                    <!--img class="logo-top" src="./img/logo_horizontal_transparente.png" alt=""-->
                     <span style="color: var(--primary-silver);">GOV</span>
                     <span style="color: #fff;">Etiquetas</span>
                 </a>
@@ -450,7 +730,6 @@
                     aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fas fa-bars text-white"></i>
                 </button>
-                <!-- Quitar el comentario aquí -->
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
@@ -495,42 +774,38 @@
                         </li>
                     </ul>
                 </div>
-                <!-- Fin de quitar el comentario -->
             </div>
         </nav>
         <!-- Navbar -->
     </header>
 
-    <!--Section: Design Block-->
+    <!-- Hero Section con Glassmorphism -->
     <section id="inicio">
-        <!-- Intro -->
-        <div class="bg-image vh-100"
-            style="background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1600&q=80');">
-            <div class="mask" style="background-color: rgba(10, 38, 71, 0.75);">
-                <div class="container d-flex justify-content-start align-items-center h-100 mt-4" style="color: white;">
-                    <div class="row">
-                        <div class="col-lg-8 mask-custom p-3">
-                            <h1 class="display-1 text-uppercase text-white" style="letter-spacing: 3px;">GOV Etiquetas.
-                            </h1>
-                            <p class="lead mb-4 text-white">Soluciones integrales en etiquetado industrial, impresoras y
-                                equipo de cómputo. Servicio inmediato, atención personalizada y entrega al día. Tu
-                                aliado confiable en identificación y control de productos.</p>
-                            <button type="button" class="btn btn-orange btn-rounded btn-lg mb-3 me-3"
-                                data-mdb-ripple-init>
-                                <i class="fas fa-tags me-2"></i>Ver Catálogo
-                            </button>
-                            <a href="https://wa.me/523331234567" target="_blank"
-                                class="btn btn-outline-light btn-rounded btn-lg mb-3" data-mdb-ripple-init>
-                                <i class="fab fa-whatsapp me-2"></i>Cotizar Ahora
-                            </a>
-                        </div>
+        <div class="hero-container">
+            <div class="hero-box">
+                <span class="hero-span"></span>
+                <div class="hero-content">
+                    <h1 class="brand-title">
+                        <span style="color: var(--primary-silver);">GOV</span> Etiquetas
+                    </h1>
+                    <p class="brand-subtitle">Soluciones Integrales en Etiquetado Industrial</p>
+                    <p>
+                        Tu proveedor confiable de etiquetas industriales, impresoras especializadas y equipo de cómputo. 
+                        Servicio inmediato, atención personalizada y entrega al día. 
+                        Nos diferenciamos por nuestro compromiso con la calidad y seguimiento continuo del inventario de nuestros clientes.
+                    </p>
+                    <div class="btn-group">
+                        <a href="#productos" class="btn-custom btn-primary-custom">
+                            <i class="fas fa-tags"></i> Ver Catálogo
+                        </a>
+                        <a href="https://wa.me/523331234567" target="_blank" class="btn-custom btn-secondary-custom">
+                            <i class="fab fa-whatsapp"></i> Cotizar Ahora
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Intro -->
     </section>
-    <!--Section: Design Block-->
 
     <main>
         <div class="container mb-5 pb-5">
@@ -587,7 +862,6 @@
                     <div class="advantage-card">
                         <div class="face face1">
                             <div class="content">
-
                                 <h5>Entrega Inmediata</h5>
                                 <p>Sacamos todo al día. Nuestro compromiso es la respuesta y entrega inmediata el mismo
                                     día de tu pedido. Tu negocio no puede esperar y nosotros lo sabemos.</p>
@@ -601,7 +875,6 @@
                     <div class="advantage-card">
                         <div class="face face1">
                             <div class="content">
-
                                 <h5>Servicio al Cliente Excepcional</h5>
                                 <p>La atención personalizada es nuestra prioridad. Respondemos inmediatamente a todas
                                     tus consultas y nos aseguramos de que recibas exactamente lo que necesitas.</p>
@@ -1032,48 +1305,43 @@
     <!-- MDB5 JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"></script>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggler = document.querySelector('.navbar-toggler');
+            const collapse = document.getElementById('navbarSupportedContent');
+
+            if (!toggler || !collapse) return;
+
+            toggler.addEventListener('click', function (e) {
+                e.preventDefault();
+                collapse.classList.toggle('show');
+                const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', String(!isExpanded));
+            });
+
+            const navLinks = collapse.querySelectorAll('.nav-link');
+            navLinks.forEach(function (link) {
+                link.addEventListener('click', function () {
+                    const togglerVisible = window.getComputedStyle(toggler).display !== 'none';
+                    if (togglerVisible && collapse.classList.contains('show')) {
+                        collapse.classList.remove('show');
+                        toggler.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            });
+
+            document.addEventListener('click', function (evt) {
+                const target = evt.target;
+                if (collapse.classList.contains('show') &&
+                    !collapse.contains(target) &&
+                    !toggler.contains(target)) {
+                    collapse.classList.remove('show');
+                    toggler.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+    </script>
+
 </body>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  const toggler = document.querySelector('.navbar-toggler');
-  const collapse = document.getElementById('navbarSupportedContent');
-
-  if (!toggler || !collapse) return; // asegura existencia
-
-  // Toggle manual del collapse
-  toggler.addEventListener('click', function (e) {
-    e.preventDefault();
-    collapse.classList.toggle('show');
-    // actualizar aria-expanded en el botón
-    const isExpanded = this.getAttribute('aria-expanded') === 'true';
-    this.setAttribute('aria-expanded', String(!isExpanded));
-  });
-
-  // Cerrar menú al hacer click en un enlace (útil en móvil)
-  const navLinks = collapse.querySelectorAll('.nav-link');
-  navLinks.forEach(function (link) {
-    link.addEventListener('click', function () {
-      // solo cerrar si está visible el toggler (pantallas pequeñas)
-      const togglerVisible = window.getComputedStyle(toggler).display !== 'none';
-      if (togglerVisible && collapse.classList.contains('show')) {
-        collapse.classList.remove('show');
-        toggler.setAttribute('aria-expanded', 'false');
-      }
-    });
-  });
-
-  // Opcional: cerrar si se hace click fuera del navbar (mejora UX)
-  document.addEventListener('click', function (evt) {
-    const target = evt.target;
-    if (collapse.classList.contains('show') &&
-        !collapse.contains(target) &&
-        !toggler.contains(target)) {
-      collapse.classList.remove('show');
-      toggler.setAttribute('aria-expanded', 'false');
-    }
-  });
-});
-</script>
 
 </html>
-
