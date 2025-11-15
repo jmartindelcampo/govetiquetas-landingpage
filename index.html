@@ -653,8 +653,352 @@
             margin-right: 8px;
         }
 
-        /* ========== RESPONSIVE ========== */
+        /* ========== RESPONSIVE ABOUT/SERVICES SECTION ========== */
+        .responsive-container-block {
+            min-height: 75px;
+            height: fit-content;
+            width: 100%;
+            padding: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 auto;
+            justify-content: flex-start;
+        }
+
+        .text-blk {
+            margin: 0;
+            padding: 10px;
+            line-height: 25px;
+        }
+
+        .responsive-container-block.bigContainer {
+            padding: 10px 50px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mainImg {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .text-blk.headingText {
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 30px;
+            color: var(--accent-orange);
+            padding: 0 10px 0 0;
+            margin: 0 0 5px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .allText {
+            padding: 0;
+            width: 40%;
+            margin: 0;
+        }
+
+        .text-blk.subHeadingText {
+            color: var(--primary-navy);
+            font-size: 26px;
+            line-height: 32px;
+            font-weight: 700;
+            margin: 0 0 15px 0;
+            padding: 0 10px 0 0;
+        }
+
+        .text-blk.description {
+            font-size: 18px;
+            line-height: 26px;
+            color: rgb(102, 102, 102);
+            margin: 0 0 50px 0;
+            font-weight: 400;
+            padding: 0 10px 0 0;
+        }
+
+        .explore {
+            font-size: 16px;
+            line-height: 28px;
+            color: var(--primary-navy);
+            border: 2px solid var(--primary-navy);
+            cursor: pointer;
+            background-color: white;
+            margin: 0;
+            padding: 8px 40px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .explore:hover {
+            background-color: var(--accent-orange);
+            color: white;
+            border: none;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+        }
+
+        .responsive-container-block.Container {
+            margin: 80px auto 50px;
+            justify-content: center;
+            align-items: center;
+            max-width: 1320px;
+            padding: 10px;
+        }
+
+        .responsive-container-block.Container.bottomContainer {
+            flex-direction: row-reverse;
+            margin: 80px auto 50px;
+            position: static;
+        }
+
+        .allText.aboveText {
+            margin: 0 0 0 40px;
+        }
+
+        .allText.bottomText {
+            margin: 0 40px 0 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            padding: 0 15px 0 0;
+        }
+
+        .purpleBox {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            max-width: 430px;
+            background: linear-gradient(135deg, var(--accent-orange), #ff8555);
+            padding: 20px;
+            border-radius: 10px;
+            position: absolute;
+            bottom: -35px;
+            left: -8%;
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+        }
+
+        .purpleText {
+            font-size: 18px;
+            line-height: 26px;
+            color: white;
+            margin: 0 0 10px 0;
+        }
+
+        .ultimateImg {
+            width: 50%;
+            position: relative;
+        }
+
+        @media (max-width: 1024px) {
+            .responsive-container-block.Container {
+                max-width: 850px;
+            }
+
+            .mainImg {
+                width: 55%;
+                height: auto;
+            }
+
+            .allText {
+                width: 40%;
+                margin: 0 0 0 20px;
+            }
+
+            .responsive-container-block.bigContainer {
+                padding: 10px;
+            }
+
+            .responsive-container-block.Container.bottomContainer {
+                margin: 80px auto 50px;
+            }
+
+            .responsive-container-block.Container {
+                max-width: 830px;
+            }
+
+            .allText.aboveText {
+                margin: 30px 0 0 40px;
+            }
+
+            .allText.bottomText {
+                margin: 30px 40px 0 0;
+                text-align: left;
+            }
+
+            .text-blk.headingText {
+                text-align: center;
+            }
+
+            .allText.aboveText {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin: 30px 0 0 0;
+            }
+
+            .text-blk.subHeadingText {
+                text-align: left;
+                font-size: 26px;
+                line-height: 32px;
+            }
+
+            .text-blk.description {
+                text-align: left;
+                line-height: 24px;
+            }
+
+            .explore {
+                margin: 0;
+            }
+
+            .responsive-container-block.bigContainer {
+                padding: 10px 30px;
+            }
+
+            .responsive-container-block.Container {
+                justify-content: space-evenly;
+            }
+
+            .purpleBox {
+                bottom: 10%;
+            }
+
+            .responsive-container-block.Container.bottomContainer {
+                padding: 10px 0;
+                max-width: 930px;
+            }
+
+            .allText.bottomText {
+                width: 40%;
+            }
+
+            .purpleBox {
+                bottom: auto;
+                left: -10%;
+                top: 70%;
+            }
+
+            .mainImg {
+                width: 100%;
+            }
+
+            .text-blk.headingText {
+                text-align: left;
+            }
+        }
+
         @media (max-width: 768px) {
+            .allText {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 0;
+            }
+
+            .responsive-container-block.Container {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .text-blk.headingText {
+                text-align: center;
+            }
+
+            .text-blk.subHeadingText {
+                text-align: center;
+                font-size: 24px;
+            }
+
+            .text-blk.description {
+                text-align: center;
+                font-size: 18px;
+            }
+
+            .allText {
+                margin: 40px 0 0 0;
+            }
+
+            .allText.aboveText {
+                margin: 40px 0 0 0;
+            }
+
+            .responsive-container-block.Container {
+                margin: 80px auto 50px;
+            }
+
+            .responsive-container-block.Container.bottomContainer {
+                margin: 50px auto 50px;
+            }
+
+            .allText.bottomText {
+                margin: 40px 0 0 0;
+            }
+
+            .mainImg {
+                width: 100%;
+                margin: 0 0 -70px 0;
+            }
+
+            .responsive-container-block.Container.bottomContainer {
+                flex-direction: column;
+            }
+
+            .ultimateImg {
+                width: 100%;
+            }
+
+            .purpleBox {
+                position: static;
+            }
+
+            .allText.bottomText {
+                width: 100%;
+                align-items: flex-start;
+            }
+
+            .text-blk.headingText {
+                text-align: left;
+            }
+
+            .text-blk.subHeadingText {
+                text-align: left;
+            }
+
+            .text-blk.description {
+                text-align: left;
+            }
+
+            .ultimateImg {
+                position: static;
+            }
+
+            .mainImg {
+                margin: 0;
+            }
+
+            .ultimateImg {
+                position: relative;
+            }
+
+            .purpleBox {
+                margin: 0;
+                position: absolute;
+                left: 0;
+                top: 80%;
+            }
+
+            .allText.bottomText {
+                margin: 100px 0 0 0;
+            }
+
             .hero-title {
                 font-size: 2rem;
             }
@@ -711,6 +1055,70 @@
                 left: 20px;
                 width: calc(100% - 40px);
                 transform: skewX(0deg);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .responsive-container-block.Container {
+                padding: 10px 0;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .mainImg {
+                width: 100%;
+            }
+
+            .responsive-container-block.bigContainer {
+                padding: 10px 25px;
+            }
+
+            .text-blk.subHeadingText {
+                font-size: 24px;
+                padding: 0;
+                line-height: 28px;
+            }
+
+            .text-blk.description {
+                font-size: 16px;
+                padding: 0;
+                line-height: 22px;
+            }
+
+            .allText {
+                padding: 0;
+                width: 100%;
+            }
+
+            .allText.bottomText {
+                margin: 50px 0 0 0;
+                padding: 0;
+            }
+
+            .ultimateImg {
+                position: static;
+            }
+
+            .purpleBox {
+                position: static;
+            }
+
+            .allText.bottomText {
+                margin: 75px 0 0 0;
+            }
+
+            .responsive-container-block.bigContainer {
+                padding: 10px 20px;
+            }
+
+            .purpleText {
+                font-size: 16px;
+                line-height: 22px;
+            }
+
+            .explore {
+                padding: 6px 35px;
+                font-size: 15px;
             }
         }
     </style>
@@ -776,7 +1184,6 @@
                 </div>
             </div>
         </nav>
-        <!-- Navbar -->
     </header>
 
     <!-- Hero Section con Glassmorphism -->
@@ -808,44 +1215,72 @@
     </section>
 
     <main>
-        <div class="container mb-5 pb-5">
+        <!-- About & Services Section with New Design -->
+        <div class="responsive-container-block bigContainer">
             <!-- About Section -->
             <section id="nosotros">
-                <div class="row d-flex align-items-center h-100 mt-5 pt-5">
-                    <div class="col-md-7 text-center">
-                        <h2 class="text-uppercase h1 mb-5 text-primary" style="letter-spacing: 3px;">Sobre Nosotros</h2>
-                        <p class="lead mb-4">GOV Etiquetas es tu proveedor confiable de soluciones en etiquetado
-                            industrial. Nos especializamos en la venta de etiquetas industriales de alta calidad,
-                            impresoras especializadas y equipo de cómputo para empresas.</p>
-                        <p class="lead mb-0">Nuestro compromiso es ofrecer un servicio al cliente excepcional con
-                            respuesta inmediata. Atendemos tanto a empresas industriales como a minoristas y
-                            distribuidores en todo México. Nos diferenciamos por nuestra entrega inmediata al día y
-                            nuestro seguimiento personalizado en el control de inventario de nuestros clientes.</p>
+                <div class="responsive-container-block Container">
+                    <div class="allText aboveText">
+                        <p class="text-blk headingText">
+                            Sobre Nosotros
+                        </p>
+                        <p class="text-blk subHeadingText">
+                            Tu proveedor confiable de soluciones en etiquetado industrial
+                        </p>
+                        <p class="text-blk description">
+                            GOV Etiquetas se especializa en la venta de etiquetas industriales de alta calidad, impresoras especializadas y equipo de cómputo para empresas. Nuestro compromiso es ofrecer un servicio al cliente excepcional con respuesta inmediata.
+                        </p>
+                        <a href="#productos" class="explore">
+                            Ver Productos
+                        </a>
                     </div>
-                    <div class="col-md-4 offset-md-1">
-                        <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&q=80"
-                            class="img-fluid shadow-navy" alt="GOV Etiquetas">
+                    <div class="ultimateImg">
+                        <img class="mainImg" src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&q=80" alt="GOV Etiquetas">
+                        <div class="purpleBox">
+                            <p class="purpleText">
+                                Atendemos empresas industriales, minoristas y distribuidores en todo México con entrega inmediata al día.
+                            </p>
+                            <div style="display: flex; gap: 5px; margin-top: 10px;">
+                                <i class="fas fa-star" style="color: #FFD700;"></i>
+                                <i class="fas fa-star" style="color: #FFD700;"></i>
+                                <i class="fas fa-star" style="color: #FFD700;"></i>
+                                <i class="fas fa-star" style="color: #FFD700;"></i>
+                                <i class="fas fa-star" style="color: #FFD700;"></i>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Services Approach Section -->
+            <!-- Services Section -->
             <section id="servicios">
-                <div class="row d-flex align-items-center h-100 mt-5 pt-5">
-                    <div class="col-md-4">
-                        <img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=800&q=80"
-                            class="img-fluid shadow-navy-left" alt="Servicios">
+                <div class="responsive-container-block Container bottomContainer">
+                    <div class="ultimateImg">
+                        <img class="mainImg" src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=800&q=80" alt="Servicios">
+                        <div class="purpleBox" style="background: linear-gradient(135deg, var(--secondary-blue), #4a9ff5);">
+                            <p class="purpleText">
+                                Revisamos la rotación de productos de nuestros clientes para asegurar que siempre tengan disponibilidad.
+                            </p>
+                            <div style="display: flex; gap: 8px; margin-top: 10px;">
+                                <i class="fas fa-check-circle" style="color: #25D366; font-size: 20px;"></i>
+                                <i class="fas fa-check-circle" style="color: #25D366; font-size: 20px;"></i>
+                                <i class="fas fa-check-circle" style="color: #25D366; font-size: 20px;"></i>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-7 offset-md-1 text-center">
-                        <h2 class="text-uppercase h1 mb-5 text-primary" style="letter-spacing: 3px;">Nuestros Servicios
-                        </h2>
-                        <p class="lead mb-4">Ofrecemos una amplia gama de servicios diseñados para satisfacer todas las
-                            necesidades de etiquetado e identificación de tu empresa. Desde etiquetas térmicas hasta
-                            suajes personalizados, contamos con la solución perfecta para tu negocio.</p>
-                        <p class="lead mb-0">Además de etiquetas, proporcionamos impresoras industriales de las mejores
-                            marcas, equipo de cómputo y soporte técnico especializado. Revisamos la rotación de
-                            productos de nuestros clientes para asegurar que siempre tengan el inventario necesario.
-                            Todo con entrega inmediata y atención personalizada.</p>
+                    <div class="allText bottomText">
+                        <p class="text-blk headingText">
+                            Nuestros Servicios
+                        </p>
+                        <p class="text-blk subHeadingText">
+                            Soluciones completas para todas tus necesidades de etiquetado
+                        </p>
+                        <p class="text-blk description">
+                            Ofrecemos etiquetas térmicas, códigos de barras, suajes personalizados, impresoras industriales de las mejores marcas, equipo de cómputo y soporte técnico especializado. Todo con entrega inmediata y atención personalizada.
+                        </p>
+                        <a href="#contacto" class="explore">
+                            Cotizar Ahora
+                        </a>
                     </div>
                 </div>
             </section>
@@ -1034,11 +1469,8 @@
 
                 <div class="row mb-5">
                     <div class="col-12">
-                        <!-- Carousel wrapper -->
                         <div id="carouselBasicExample" class="carousel slide" data-mdb-carousel-init data-mdb-ride="carousel">
-                            <!-- Inner -->
                             <div class="carousel-inner text-center">
-                                <!-- Single item -->
                                 <div class="carousel-item active">
                                     <div class="row">
                                         <div class="col-md-12 col-lg-8 col-xl-8 pt-1 mb-4 mx-auto">
@@ -1058,7 +1490,6 @@
                                     </div>
                                 </div>
 
-                                <!-- Single item -->
                                 <div class="carousel-item">
                                     <div class="row">
                                         <div class="col-md-12 col-lg-8 col-xl-8 pt-1 mb-4 mx-auto">
@@ -1078,7 +1509,6 @@
                                     </div>
                                 </div>
 
-                                <!-- Single item -->
                                 <div class="carousel-item">
                                     <div class="row">
                                         <div class="col-md-12 col-lg-8 col-xl-8 pt-1 mb-4 mx-auto">
@@ -1098,9 +1528,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Inner -->
 
-                            <!-- Controls -->
                             <a class="carousel-control-prev" href="#carouselBasicExample" role="button"
                                 data-mdb-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -1112,7 +1540,6 @@
                                 <span class="sr-only">Siguiente</span>
                             </a>
                         </div>
-                        <!-- Carousel wrapper -->
                     </div>
                 </div>
             </section>
@@ -1148,10 +1575,10 @@
                         <div class="p-4">
                             <i class="fas fa-envelope fa-3x mb-3" style="color: var(--accent-orange);"></i>
                             <h5 class="fw-bold">Correo Electrónico</h5>
-                            <p><a href="mailto:contacto@govetiquetas.com.mx" class="text-white">contacto@govetiquetas.com.mx</a>
+                            <p><a href="mailto:contacto@gvetiquetas.com" class="text-white">contacto@gvetiquetas.com</a>
                             </p>
-                            <p><a href="mailto:facturacion@govetiquetas.com.mx"
-                                    class="text-white">facturacion@govetiquetas.com.mx</a></p>
+                            <p><a href="mailto:facturacion@gvetiquetas.com"
+                                    class="text-white">facturacion@gvetiquetas.com</a></p>
                         </div>
                     </div>
                 </div>
@@ -1170,11 +1597,8 @@
 
     <!-- Footer -->
     <footer class="text-white text-center text-lg-start footer-dark">
-        <!-- Grid container -->
         <div class="container p-4">
-            <!--Grid row-->
             <div class="row mt-4">
-                <!--Grid column-->
                 <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
                     <h5 class="text-uppercase mb-4">GOV Etiquetas</h5>
 
@@ -1213,9 +1637,7 @@
                         </ul>
                     </div>
                 </div>
-                <!--Grid column-->
 
-                <!--Grid column-->
                 <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
                     <h5 class="text-uppercase mb-4 pb-1">Enlaces Rápidos</h5>
 
@@ -1240,9 +1662,7 @@
                     <h6 class="text-uppercase mb-3 mt-4">Ubicación</h6>
                     <p><i class="fas fa-map-marker-alt me-2"></i>Tlaquepaque, Jalisco, México</p>
                 </div>
-                <!--Grid column-->
 
-                <!--Grid column-->
                 <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
                     <h5 class="text-uppercase mb-4">Información de Contacto</h5>
 
@@ -1250,15 +1670,15 @@
                         <li class="mb-3">
                             <span class="fa-li"><i class="fas fa-envelope"></i></span>
                             <span class="ms-2">
-                                <a href="mailto:contacto@govetiquetas.com.mx"
-                                    class="text-white">contacto@govetiquetas.com.mx</a>
+                                <a href="mailto:contacto@gvetiquetas.com"
+                                    class="text-white">contacto@gvetiquetas.com</a>
                             </span>
                         </li>
                         <li class="mb-3">
                             <span class="fa-li"><i class="fas fa-envelope"></i></span>
                             <span class="ms-2">
-                                <a href="mailto:facturacion@govetiquetas.com.mx"
-                                    class="text-white">facturacion@govetiquetas.com.mx</a>
+                                <a href="mailto:facturacion@gvetiquetas.com"
+                                    class="text-white">facturacion@gvetiquetas.com</a>
                             </span>
                         </li>
                         <li class="mb-3">
@@ -1282,19 +1702,14 @@
                         <p><i class="fas fa-clock me-2"></i>Sábado: 9:00 AM - 2:00 PM</p>
                     </div>
                 </div>
-                <!--Grid column-->
             </div>
-            <!--Grid row-->
         </div>
-        <!-- Grid container -->
 
-        <!-- Copyright -->
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
             © 2024 Copyright:
-            <a class="text-white fw-bold" href="https://govetiquetas.com.mx">GOV Etiquetas</a> - Todos los derechos
+            <a class="text-white fw-bold" href="https://gvetiquetas.com">GOV Etiquetas</a> - Todos los derechos
             reservados
         </div>
-        <!-- Copyright -->
     </footer>
 
     <!-- WhatsApp Float Button -->
