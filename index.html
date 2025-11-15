@@ -74,6 +74,11 @@
             width: 145px;
         }
 
+        .main-logo
+        {
+            width: 40%;
+        }
+
         .navbar {
             background-color: rgba(10, 38, 71, 0.95);
         }
@@ -362,7 +367,7 @@
         }
 
         .advantage-card:nth-child(3) .face.face2 {
-            background: linear-gradient(45deg, var(--accent-orange), #ff8555);
+            background: linear-gradient(45deg, var(--primary-navy), var(--primary-silver));
         }
 
         .advantage-card:nth-child(4) .face.face2 {
@@ -370,7 +375,7 @@
         }
 
         .advantage-card:nth-child(5) .face.face2 {
-            background: linear-gradient(45deg, var(--primary-navy), var(--accent-orange));
+            background: linear-gradient(45deg, var(--primary-navy), var(--primary-navy));
         }
 
         .advantage-card:nth-child(6) .face.face2 {
@@ -574,7 +579,8 @@
             z-index: 1;
             transition: 0.5s;
             color: #fff;
-            text-align: left;
+            text-align: justify;
+
         }
 
         .hero-box:hover .hero-content {
@@ -590,11 +596,12 @@
             letter-spacing: 3px;
             text-transform: uppercase;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            text-align: center;
         }
 
         .hero-content .brand-subtitle {
-            color: var(--accent-orange);
-            font-size: 1.2em;
+            color: var(--primary-navy);
+            /*font-size: 1.2em;*/
             font-weight: 500;
             margin-bottom: 20px;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
@@ -629,14 +636,14 @@
         }
 
         .btn-primary-custom {
-            background: var(--accent-orange);
+            background: var(--primary-navy);
             color: #fff;
         }
 
         .btn-primary-custom:hover {
-            background: #ff8555;
+            background: var(--primary-silver);
             transform: translateY(-3px);
-            box-shadow: 0 5px 20px rgba(255, 107, 53, 0.4);
+            box-shadow: 0 5px 20px var(--primary-silver);
         }
 
         .btn-secondary-custom {
@@ -691,7 +698,7 @@
             font-size: 22px;
             font-weight: 700;
             line-height: 30px;
-            color: var(--accent-orange);
+            color: var(--primary-navy);
             padding: 0 10px 0 0;
             margin: 0 0 5px 0;
             text-transform: uppercase;
@@ -737,7 +744,7 @@
         }
 
         .explore:hover {
-            background-color: var(--accent-orange);
+            background-color: var(--primary-navy);
             color: white;
             border: none;
             transform: translateY(-2px);
@@ -776,7 +783,7 @@
             flex-direction: column;
             align-items: flex-start;
             max-width: 430px;
-            background: linear-gradient(135deg, var(--accent-orange), #ff8555);
+            background: linear-gradient(135deg, var(--secondary-blue), var(--primary-navy));
             padding: 20px;
             border-radius: 10px;
             position: absolute;
@@ -1196,9 +1203,10 @@
                 <span class="hero-span"></span>
                 <div class="hero-content">
                     <h1 class="brand-title">
-                        <span style="color: var(--primary-silver);">GOV</span> Etiquetas
+                        <!--span style="color: var(--primary-silver);">GOV</span> Etiquetas -->
+                        <img class="main-logo img-responsive" src="./img/logo_horizontal.png" alt=""> <span style="color: var(--primary-silver);">ETIQUETAS</span>
                     </h1>
-                    <p class="brand-subtitle">Soluciones Integrales en Etiquetado Industrial</p>
+                    <h3 class="brand-subtitle">Soluciones Integrales en Etiquetado Industrial</h3>
                     <p>
                         Tu proveedor confiable de etiquetas industriales, impresoras especializadas y equipo de cómputo.
                         Servicio inmediato, atención personalizada y entrega al día.
@@ -1427,7 +1435,7 @@
                             </p>
                             <div style="display: flex; gap: 5px; margin-top: 10px; align-items: center;">
                                 <i class="fas fa-check-circle" style="color: #25D366; font-size: 18px;"></i>
-                                <span style="font-size: 14px;">Alta calidad garantizada</span>
+                                <span class="text-white" style="font-size: 14px;">Alta calidad garantizada</span>
                             </div>
                         </div>
                     </div>
@@ -1484,7 +1492,7 @@
                             src="https://images.unsplash.com/photo-1590959651373-a3db0f38a961?w=800&q=80"
                             alt="Etiquetas Especiales">
                         <div class="purpleBox"
-                            style="background: linear-gradient(135deg, var(--accent-orange), #ff8555);">
+                            style="background: linear-gradient(135deg, var(--primary-navy), var(--primary-silver));">
                             <p class="purpleText">
                                 Materiales especiales para condiciones extremas de uso industrial.
                             </p>
@@ -1510,8 +1518,8 @@
                             </p>
                             <div style="display: flex; gap: 5px; margin-top: 10px; align-items: center;">
                                 <i class="fas fa-ruler-combined"
-                                    style="color: var(--accent-orange); font-size: 20px;"></i>
-                                <span style="font-size: 14px;">Medidas exactas</span>
+                                    style="font-size: 20px;"></i>
+                                <span class="text-white" style="font-size: 14px;">Medidas exactas</span>
                             </div>
                         </div>
                     </div>
@@ -1553,8 +1561,8 @@
                                 Equipos de alta calidad con garantía completa y soporte técnico especializado.
                             </p>
                             <div style="display: flex; gap: 8px; margin-top: 10px;">
-                                <i class="fas fa-tools" style="color: var(--accent-orange); font-size: 18px;"></i>
-                                <i class="fas fa-headset" style="color: var(--accent-orange); font-size: 18px;"></i>
+                                <i class="fas fa-tools" style="color: var(--primary-navy); font-size: 18px;"></i>
+                                <i class="fas fa-headset" style="color: var(--primary-navy); font-size: 18px;"></i>
                             </div>
                         </div>
                     </div>
@@ -1567,7 +1575,7 @@
                             src="https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=800&q=80"
                             alt="Equipo de Cómputo">
                         <div class="purpleBox"
-                            style="background: linear-gradient(135deg, var(--primary-navy), var(--accent-orange));">
+                            style="background: linear-gradient(135deg, var(--primary-navy), var(--primary-navy));">
                             <p class="purpleText">
                                 Equipos nuevos y reacondicionados con garantía. Marcas reconocidas.
                             </p>
@@ -1696,7 +1704,7 @@
                         <div class="card h-100 text-center shadow-4"
                             style="background: rgba(255,255,255,0.05); backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,0.1);">
                             <div class="card-body py-4">
-                                <i class="fas fa-phone fa-3x mb-3" style="color: var(--accent-orange);"></i>
+                                <i class="fas fa-phone fa-3x mb-3" style="color: var(--primary-silver);"></i>
                                 <h5 class="fw-bold mb-3 text-white">Teléfono</h5>
                                 <p class="mb-1"><a href="tel:+523331234567" class="text-white">(33) 3123-4567</a></p>
                                 <p><a href="tel:+523331234568" class="text-white">(33) 3123-4568</a></p>
@@ -1723,7 +1731,7 @@
                         <div class="card h-100 text-center shadow-4"
                             style="background: rgba(255,255,255,0.05); backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,0.1);">
                             <div class="card-body py-4">
-                                <i class="fas fa-envelope fa-3x mb-3" style="color: var(--accent-orange);"></i>
+                                <i class="fas fa-envelope fa-3x mb-3" style="color: var(--primary-silver);"></i>
                                 <h5 class="fw-bold mb-3 text-white">Correo</h5>
                                 <p><a href="mailto:contacto@govetiquetas.com.mx"
                                         class="text-white">contacto@govetiquetas.com.mx</a></p>
