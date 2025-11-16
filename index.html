@@ -277,6 +277,9 @@
         .social-icons li:nth-child(4) a:before {
             background: #0077b5;
         }
+        .social-icons li:nth-child(5) a:before {
+            background: var(--primary-silver);
+        }
 
         /* Social icons in navbar */
         .navbar .social-icons li a {
@@ -865,6 +868,7 @@
 
             .explore {
                 margin: 0;
+                margin-bottom: 30px;
             }
 
             .responsive-container-block.bigContainer {
@@ -1129,6 +1133,8 @@
             .explore {
                 padding: 6px 35px;
                 font-size: 15px;
+                margin-bottom: 30px;
+
             }
         }
     </style>
@@ -1170,12 +1176,12 @@
                         </li>
                     </ul>
                     <ul class="social-icons d-flex flex-row">
-                        <li>
+                        <li class="d-none">
                             <a href="#!" aria-label="Facebook">
                                 <i class="fab fa-facebook-f icon"></i>
                             </a>
                         </li>
-                        <li>
+                        <li class="d-none">
                             <a href="#!" aria-label="Instagram">
                                 <i class="fab fa-instagram icon"></i>
                             </a>
@@ -1185,9 +1191,14 @@
                                 <i class="fab fa-whatsapp icon"></i>
                             </a>
                         </li>
-                        <li>
+                        <li class="d-none">
                             <a href="#!" aria-label="LinkedIn">
                                 <i class="fab fa-linkedin-in icon"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="tel:+523331234567" target="_blank" aria-label="Phone">
+                                <i class="fas fa-phone icon"></i>
                             </a>
                         </li>
                     </ul>
@@ -1782,12 +1793,12 @@
 
                     <div class="mt-4">
                         <ul class="social-icons">
-                            <li>
+                            <li class="d-none">
                                 <a href="#!" aria-label="Facebook">
                                     <i class="fab fa-facebook-f icon"></i>
                                 </a>
                             </li>
-                            <li>
+                            <li class="d-none">
                                 <a href="#!" aria-label="Instagram">
                                     <i class="fab fa-instagram icon"></i>
                                 </a>
@@ -1797,9 +1808,14 @@
                                     <i class="fab fa-whatsapp icon"></i>
                                 </a>
                             </li>
-                            <li>
+                            <li class="d-none">
                                 <a href="#!" aria-label="LinkedIn">
                                     <i class="fab fa-linkedin-in icon"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="tel:+523331234567" target="_blank" aria-label="Phone">
+                                    <i class="fas fa-phone icon"></i>
                                 </a>
                             </li>
                         </ul>
