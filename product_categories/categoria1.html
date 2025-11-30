@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etiquetas Térmicas - GOV Etiquetas</title>
     <link rel="icon" type="image/x-icon" href="../img/logo.ico">
-    <meta name="description" content="Catálogo completo de etiquetas térmicas industriales. Diversos tamaños y materiales.">
+    <meta name="description"
+        content="Catálogo completo de etiquetas térmicas industriales. Diversos tamaños y materiales.">
 
     <!-- MDB5 CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css" rel="stylesheet">
@@ -139,9 +140,11 @@
             0% {
                 box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
             }
+
             70% {
                 box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
             }
+
             100% {
                 box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
             }
@@ -313,6 +316,98 @@
             line-height: 1.8;
         }
 
+        /* Social Media Effect */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .social-icons li a {
+            width: 60px;
+            height: 60px;
+            background-color: #fff;
+            text-align: center;
+            line-height: 60px;
+            font-size: 28px;
+            display: block;
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+            border: 3px solid #fff;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons li a .icon {
+            position: relative;
+            color: var(--primary-navy);
+            transition: .5s;
+            z-index: 3;
+        }
+
+        .social-icons li a:hover .icon {
+            color: #fff;
+            transform: rotateY(360deg);
+        }
+
+        .social-icons li a:before {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: .5s;
+            z-index: 2;
+        }
+
+        .social-icons li a:hover:before {
+            top: 0;
+        }
+
+        /* Colores específicos por red social */
+        .social-icons li:nth-child(1) a:before {
+            background: #1877f2;
+        }
+
+        .social-icons li:nth-child(2) a:before {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+
+        .social-icons li:nth-child(3) a:before {
+            background: #25D366;
+        }
+
+        .social-icons li:nth-child(4) a:before {
+            background: #0077b5;
+        }
+
+        .social-icons li:nth-child(5) a:before {
+            background: var(--primary-silver);
+        }
+
+        /* Social icons in navbar */
+        .navbar .social-icons li a {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 18px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .navbar .social-icons li a .icon {
+            color: white;
+        }
+
+        .navbar .social-icons li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
         /* Footer */
         .footer-dark {
             background-color: var(--primary-navy);
@@ -359,7 +454,37 @@
                             <a class="nav-link" href="../index.html#productos">Productos</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="../index.html#ventajas">Ventajas</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="../index.html#contacto">Contacto</a>
+                        </li>
+                    </ul>
+                    <ul class="social-icons d-flex flex-row">
+                        <li class="d-none">
+                            <a href="#!" aria-label="Facebook">
+                                <i class="fab fa-facebook-f icon"></i>
+                            </a>
+                        </li>
+                        <li class="d-none">
+                            <a href="#!" aria-label="Instagram">
+                                <i class="fab fa-instagram icon"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://wa.me/523331234567" target="_blank" aria-label="WhatsApp">
+                                <i class="fab fa-whatsapp icon"></i>
+                            </a>
+                        </li>
+                        <li class="d-none">
+                            <a href="#!" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in icon"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="tel:+523331234567" target="_blank" aria-label="Phone">
+                                <i class="fas fa-phone icon"></i>
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -388,9 +513,11 @@
             <div class="category-info">
                 <h3><i class="fas fa-info-circle me-2"></i>Sobre esta categoría</h3>
                 <p>
-                    Nuestras etiquetas térmicas son ideales para aplicaciones industriales, logística, control de inventario 
-                    y gestión de productos. Fabricadas con materiales de alta calidad que garantizan durabilidad y 
-                    legibilidad en diversas condiciones. Disponibles en múltiples tamaños y configuraciones para adaptarse 
+                    Nuestras etiquetas térmicas son ideales para aplicaciones industriales, logística, control de
+                    inventario
+                    y gestión de productos. Fabricadas con materiales de alta calidad que garantizan durabilidad y
+                    legibilidad en diversas condiciones. Disponibles en múltiples tamaños y configuraciones para
+                    adaptarse
                     a tus necesidades específicas.
                 </p>
             </div>
@@ -409,8 +536,8 @@
                         <div class="col-md-6 col-lg-4">
                             <div class="product-card">
                                 <div style="position: relative;">
-                                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&q=80" 
-                                         alt="Etiqueta" class="product-image">
+                                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&q=80"
+                                        alt="Etiqueta" class="product-image">
                                     <span class="product-badge">Popular</span>
                                 </div>
                                 <div class="product-content">
@@ -422,8 +549,8 @@
                                         <li><i class="fas fa-check-circle"></i>Adhesivo permanente</li>
                                     </ul>
                                     <div class="product-footer">
-                                        <a href="https://wa.me/523331234567?text=Quiero%20cotizar%20Etiqueta%20Térmica%204x6" 
-                                           target="_blank" class="btn-quote">
+                                        <a href="https://wa.me/523331234567?text=Quiero%20cotizar%20Etiqueta%20Térmica%204x6"
+                                            target="_blank" class="btn-quote">
                                             <i class="fab fa-whatsapp me-2"></i>Cotizar
                                         </a>
                                     </div>
@@ -435,8 +562,8 @@
                         <div class="col-md-6 col-lg-4">
                             <div class="product-card">
                                 <div style="position: relative;">
-                                    <img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=400&q=80" 
-                                         alt="Etiqueta" class="product-image">
+                                    <img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=400&q=80"
+                                        alt="Etiqueta" class="product-image">
                                 </div>
                                 <div class="product-content">
                                     <h5 class="product-title">Etiqueta Térmica 4x4</h5>
@@ -447,9 +574,9 @@
                                         <li><i class="fas fa-check-circle"></i>Adhesivo permanente</li>
                                     </ul>
                                     <div class="product-footer">
-                                        
-                                        <a href="https://wa.me/523331234567?text=Quiero%20cotizar%20Etiqueta%20Térmica%204x4" 
-                                           target="_blank" class="btn-quote">
+
+                                        <a href="https://wa.me/523331234567?text=Quiero%20cotizar%20Etiqueta%20Térmica%204x4"
+                                            target="_blank" class="btn-quote">
                                             <i class="fab fa-whatsapp me-2"></i>Cotizar
                                         </a>
                                     </div>
@@ -461,8 +588,8 @@
                         <div class="col-md-6 col-lg-4">
                             <div class="product-card">
                                 <div style="position: relative;">
-                                    <img src="https://images.unsplash.com/photo-1590959651373-a3db0f38a961?w=400&q=80" 
-                                         alt="Etiqueta" class="product-image">
+                                    <img src="https://images.unsplash.com/photo-1590959651373-a3db0f38a961?w=400&q=80"
+                                        alt="Etiqueta" class="product-image">
                                     <span class="product-badge">Nuevo</span>
                                 </div>
                                 <div class="product-content">
@@ -474,9 +601,9 @@
                                         <li><i class="fas fa-tint"></i>Resistente al agua</li>
                                     </ul>
                                     <div class="product-footer">
-                                        
-                                        <a href="https://wa.me/523331234567?text=Quiero%20cotizar%20Etiqueta%20Polipropileno" 
-                                           target="_blank" class="btn-quote">
+
+                                        <a href="https://wa.me/523331234567?text=Quiero%20cotizar%20Etiqueta%20Polipropileno"
+                                            target="_blank" class="btn-quote">
                                             <i class="fab fa-whatsapp me-2"></i>Cotizar
                                         </a>
                                     </div>
@@ -488,8 +615,8 @@
                         <div class="col-md-6 col-lg-4">
                             <div class="product-card">
                                 <div style="position: relative;">
-                                    <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&q=80" 
-                                         alt="Etiqueta" class="product-image">
+                                    <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&q=80"
+                                        alt="Etiqueta" class="product-image">
                                 </div>
                                 <div class="product-content">
                                     <h5 class="product-title">Etiqueta Mini 2x1</h5>
@@ -500,9 +627,9 @@
                                         <li><i class="fas fa-check-circle"></i>Alta densidad</li>
                                     </ul>
                                     <div class="product-footer">
-                                        
-                                        <a href="https://wa.me/523331234567?text=Quiero%20cotizar%20Etiqueta%20Mini%202x1" 
-                                           target="_blank" class="btn-quote">
+
+                                        <a href="https://wa.me/523331234567?text=Quiero%20cotizar%20Etiqueta%20Mini%202x1"
+                                            target="_blank" class="btn-quote">
                                             <i class="fab fa-whatsapp me-2"></i>Cotizar
                                         </a>
                                     </div>
@@ -514,8 +641,8 @@
                         <div class="col-md-6 col-lg-4">
                             <div class="product-card">
                                 <div style="position: relative;">
-                                    <img src="https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=400&q=80" 
-                                         alt="Etiqueta" class="product-image">
+                                    <img src="https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=400&q=80"
+                                        alt="Etiqueta" class="product-image">
                                     <span class="product-badge">Oferta</span>
                                 </div>
                                 <div class="product-content">
@@ -527,9 +654,9 @@
                                         <li><i class="fas fa-fire"></i>Alta temperatura</li>
                                     </ul>
                                     <div class="product-footer">
-                                        
-                                        <a href="https://wa.me/523331234567?text=Quiero%20cotizar%20Etiqueta%20Poliéster%20Premium" 
-                                           target="_blank" class="btn-quote">
+
+                                        <a href="https://wa.me/523331234567?text=Quiero%20cotizar%20Etiqueta%20Poliéster%20Premium"
+                                            target="_blank" class="btn-quote">
                                             <i class="fab fa-whatsapp me-2"></i>Cotizar
                                         </a>
                                     </div>
@@ -541,8 +668,8 @@
                         <div class="col-md-6 col-lg-4">
                             <div class="product-card">
                                 <div style="position: relative;">
-                                    <img src="https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=400&q=80" 
-                                         alt="Etiqueta" class="product-image">
+                                    <img src="https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=400&q=80"
+                                        alt="Etiqueta" class="product-image">
                                 </div>
                                 <div class="product-content">
                                     <h5 class="product-title">Etiqueta Industrial XL</h5>
@@ -553,9 +680,9 @@
                                         <li><i class="fas fa-industry"></i>Uso industrial</li>
                                     </ul>
                                     <div class="product-footer">
-                                        
-                                        <a href="https://wa.me/523331234567?text=Quiero%20cotizar%20Etiqueta%20Industrial%20XL" 
-                                           target="_blank" class="btn-quote">
+
+                                        <a href="https://wa.me/523331234567?text=Quiero%20cotizar%20Etiqueta%20Industrial%20XL"
+                                            target="_blank" class="btn-quote">
                                             <i class="fab fa-whatsapp me-2"></i>Cotizar
                                         </a>
                                     </div>
@@ -574,51 +701,87 @@
             <div class="row mt-4">
                 <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
                     <h5 class="text-uppercase mb-4">GOV Etiquetas</h5>
+
                     <p>
                         Soluciones integrales en etiquetado industrial desde el corazón de Jalisco para todo México.
+                        Comprometidos con la calidad y el servicio inmediato.
                     </p>
+
+                    <p>
+                        Atención personalizada para empresas industriales, minoristas y distribuidores.
+                        Tu socio confiable en identificación y control de productos.
+                    </p>
+
+                    <div class="mt-4">
+                        <ul class="social-icons">
+                            <li class="d-none">
+                                <a href="#!" aria-label="Facebook">
+                                    <i class="fab fa-facebook-f icon"></i>
+                                </a>
+                            </li>
+                            <li class="d-none">
+                                <a href="#!" aria-label="Instagram">
+                                    <i class="fab fa-instagram icon"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://wa.me/523331234567" target="_blank" aria-label="WhatsApp">
+                                    <i class="fab fa-whatsapp icon"></i>
+                                </a>
+                            </li>
+                            <li class="d-none">
+                                <a href="#!" aria-label="LinkedIn">
+                                    <i class="fab fa-linkedin-in icon"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="tel:+523331234567" target="_blank" aria-label="Phone">
+                                    <i class="fas fa-phone icon"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
                     <h5 class="text-uppercase mb-4 pb-1">Enlaces Rápidos</h5>
+
                     <ul class="list-unstyled mb-4">
                         <li class="mb-2">
-                            <a href="../index.html#inicio" class="text-white">
-                                <i class="fas fa-home me-2"></i>Inicio
-                            </a>
+                            <a href="../index.html#inicio" class="text-white"><i class="fas fa-home me-2"></i>Inicio</a>
                         </li>
                         <li class="mb-2">
-                            <a href="../index.html#nosotros" class="text-white">
-                                <i class="fas fa-info-circle me-2"></i>Nosotros
-                            </a>
+                            <a href="../index.html#nosotros" class="text-white"><i
+                                    class="fas fa-info-circle me-2"></i>Nosotros</a>
                         </li>
                         <li class="mb-2">
-                            <a href="../index.html#servicios" class="text-white">
-                                <i class="fas fa-cogs me-2"></i>Servicios
-                            </a>
+                            <a href="../index.html#servicios" class="text-white"><i
+                                    class="fas fa-cogs me-2"></i>Servicios</a>
                         </li>
                         <li class="mb-2">
-                            <a href="../index.html#productos" class="text-white">
-                                <i class="fas fa-tags me-2"></i>Productos
-                            </a>
+                            <a href="../index.html#productos" class="text-white"><i
+                                    class="fas fa-tags me-2"></i>Productos</a>
                         </li>
                         <li class="mb-2">
-                            <a href="../index.html#contacto" class="text-white">
-                                <i class="fas fa-envelope me-2"></i>Contacto
-                            </a>
+                            <a href="../index.html#contacto" class="text-white"><i
+                                    class="fas fa-envelope me-2"></i>Contacto</a>
                         </li>
                     </ul>
+
+                    <h6 class="text-uppercase mb-3 mt-4">Ubicación</h6>
+                    <p><i class="fas fa-map-marker-alt me-2"></i>C. Isla Socorro 2763A, Jardines de San José, 44956
+                        Guadalajara, Jal.</p>
                 </div>
 
                 <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
                     <h5 class="text-uppercase mb-4">Información de Contacto</h5>
+
                     <ul class="fa-ul" style="margin-left: 1.65em;">
                         <li class="mb-3">
                             <span class="fa-li"><i class="fas fa-envelope"></i></span>
                             <span class="ms-2">
-                                <a href="mailto:contacto@govetiquetas.com.mx" class="text-white">
-                                    contacto@govetiquetas.com.mx
-                                </a>
+                                <a href="mailto:contacto@govetiquetas.com.mx"
+                                    class="text-white">contacto@govetiquetas.com.mx</a>
                             </span>
                         </li>
                         <li class="mb-3">
@@ -630,23 +793,24 @@
                         <li class="mb-3">
                             <span class="fa-li"><i class="fab fa-whatsapp"></i></span>
                             <span class="ms-2">
-                                <a href="https://wa.me/523331234567" class="text-white" target="_blank">
-                                    WhatsApp - Respuesta inmediata
-                                </a>
+                                <a href="https://wa.me/523331234567" class="text-white" target="_blank">WhatsApp -
+                                    Respuesta inmediata</a>
                             </span>
                         </li>
-                        <li class="mb-3">
-                            <span class="fa-li"><i class="fas fa-map-marker-alt"></i></span>
-                            <span class="ms-2">Tlaquepaque, Jalisco, México</span>
-                        </li>
                     </ul>
+
+                    <div class="mt-4">
+                        <h6 class="text-uppercase mb-3">Horario de Atención</h6>
+                        <p class="mb-1"><i class="fas fa-clock me-2"></i>Lunes - Viernes: 9:00 AM - 6:00 PM</p>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            © 2024 Copyright:
-            <a class="text-white fw-bold" href="https://govetiquetas.com.mx">GOV Etiquetas</a> - Todos los derechos reservados
+            © 2025 Copyright:
+            <a class="text-white fw-bold" href="https://govetiquetas.com.mx">GOV Etiquetas</a> - Todos los derechos
+            reservados
         </div>
     </footer>
 

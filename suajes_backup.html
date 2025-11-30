@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suajes Personalizados - GOV Etiquetas</title>
+    <link rel="icon" type="image/x-icon" href="./img/logo.ico">
+    <meta name="description"
+        content="Suajes personalizados para etiquetas. Diseño y fabricación de formas especiales según tus especificaciones.">
+    <meta name="keywords"
+        content="suajes personalizados, suajes para etiquetas, corte de etiquetas, formas personalizadas, GOV Etiquetas">
+    <link rel="canonical" href="https://govetiquetas.com.mx/suajes.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://govetiquetas.com.mx/suajes.html">
+    <meta property="og:title" content="Suajes Personalizados - GOV Etiquetas">
+    <meta property="og:description"
+        content="Suajes personalizados para etiquetas. Diseño y fabricación de formas especiales según tus especificaciones.">
+    <meta property="og:image" content="https://govetiquetas.com.mx/img/logo_horizontal.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://govetiquetas.com.mx/suajes.html">
+    <meta property="twitter:title" content="Suajes Personalizados - GOV Etiquetas">
+    <meta property="twitter:description"
+        content="Suajes personalizados para etiquetas. Diseño y fabricación de formas especiales según tus especificaciones.">
+    <meta property="twitter:image" content="https://govetiquetas.com.mx/img/logo_horizontal.png">
+
+    <!-- MDB5 CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f7f3ef;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        /* Colores principales */
+        :root {
+            --primary-navy: #0A2647;
+            --primary-silver: #C0C0C0;
+            --secondary-blue: #205295;
+            --accent-orange: #FF6B35;
+        }
+
+        .text-primary {
+            color: var(--primary-navy) !important;
+        }
+
+        .btn-navy {
+            background-color: var(--primary-navy);
+            color: white;
+        }
+
+        .btn-navy:hover {
+            background-color: var(--secondary-blue);
+            color: white;
+        }
+
+        .btn-orange {
+            background-color: var(--accent-orange);
+            color: white;
+        }
+
+        .btn-orange:hover {
+            background-color: #ff8555;
+            color: white;
+        }
+
+        .navbar-brand {
+            font-size: 1.75rem;
+            letter-spacing: 3px;
+            font-weight: 700;
+        }
+
+        .logo-top {
+            width: 145px;
+        }
+
+        .navbar {
+            background-color: rgba(10, 38, 71, 0.95);
+        }
+
+        .nav-link {
+            color: white !important;
+            transition: all 0.3s ease;
+            position: relative;
+            display: block;
+            text-transform: uppercase;
+            padding: 10px 20px !important;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            z-index: 1;
+        }
+
+        .nav-link:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-top: 2px solid white;
+            border-bottom: 2px solid white;
+            transform: scaleY(2);
+            opacity: 0;
+            transition: .3s;
+        }
+
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            transform: scale(0);
+            opacity: 0;
+            transition: .3s;
+            z-index: -1;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-navy) !important;
+        }
+
+        .nav-link:hover:before {
+            transform: scaleY(1);
+            opacity: 1;
+        }
+
+        .nav-link:hover:after {
+            transform: scaleY(1);
+            opacity: 1;
+        }
+
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+            text-decoration: none;
+            color: white;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        /* Social Media Effect */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .social-icons li a {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            text-align: center;
+            line-height: 40px;
+            font-size: 18px;
+            display: block;
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons li a .icon {
+            position: relative;
+            color: white;
+            transition: .5s;
+            z-index: 3;
+        }
+
+        .social-icons li a:hover .icon {
+            color: #fff;
+            transform: rotateY(360deg);
+        }
+
+        .social-icons li a:before {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: .5s;
+            z-index: 2;
+        }
+
+        .social-icons li a:hover:before {
+            top: 0;
+        }
+
+        /* Colores específicos por red social */
+        .social-icons li:nth-child(1) a:before {
+            background: #25D366;
+        }
+
+        .social-icons li:nth-child(2) a:before {
+            background: var(--primary-silver);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            min-height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #0A2647 0%, #205295 50%, #0A2647 100%);
+            overflow: hidden;
+            padding: 120px 20px 60px;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            letter-spacing: 2px;
+        }
+
+        .hero-content p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        /* Suajes Grid */
+        .suajes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            padding: 60px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Product Card - matching categoria1.html */
+        .suaje-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .suaje-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--accent-orange);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .product-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-title {
+            color: var(--primary-navy);
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .suaje-dimensions {
+            background: linear-gradient(135deg, var(--secondary-blue), var(--primary-navy));
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .dimension-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .dimension-item:last-child {
+            border-bottom: none;
+        }
+
+        .dimension-label {
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+
+        .dimension-value {
+            font-weight: 700;
+            font-size: 1em;
+        }
+
+        .product-specs {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+            flex-grow: 1;
+        }
+
+        .product-specs li {
+            color: #666;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .product-specs li i {
+            color: var(--secondary-blue);
+            margin-right: 8px;
+            width: 20px;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .btn-quote {
+            background: var(--secondary-blue);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            border: none;
+            width: 100%;
+            text-align: center;
+            display: inline-block;
+        }
+
+        .btn-quote:hover {
+            background: var(--primary-navy);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            padding: 60px 20px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-title h2 {
+            color: var(--primary-navy);
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .section-title p {
+            color: #666;
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer-dark {
+            background-color: var(--primary-navy);
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.2em;
+            }
+
+            .hero-content p {
+                font-size: 1.1em;
+            }
+
+            .suajes-grid {
+                grid-template-columns: 1fr;
+                padding: 40px 15px;
+            }
+
+            .section-title h2 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-0">
+            <div class="container">
+                <a class="navbar-brand text-white" href="index.html">
+                    <span style="color: var(--primary-silver);">GOV</span>
+                    <span style="color: #fff;">Etiquetas</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-mdb-collapse-init
+                    data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars text-white"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#inicio">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#nosotros">Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#servicios">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#productos">Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="suajes.html">Suajes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#contacto">Contacto</a>
+                        </li>
+                    </ul>
+                    <ul class="social-icons d-flex flex-row">
+                        <li>
+                            <a href="https://wa.me/523331234567" target="_blank" aria-label="WhatsApp">
+                                <i class="fab fa-whatsapp icon"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="tel:+523331234567" target="_blank" aria-label="Phone">
+                                <i class="fas fa-phone icon"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Suajes Personalizados</h1>
+            <p>
+                Diseño y fabricación de suajes para etiquetas con formas únicas que se adaptan perfectamente a tus
+                productos. Medidas exactas y calidad garantizada.
+            </p>
+        </div>
+        <div class="dimension-item">
+            <span class="dimension-label">
+                <i class="fas fa-arrows-alt-h"></i> Ancho
+            </span>
+            <span class="dimension-value">10 cm</span>
+        </div>
+        <div class="dimension-item">
+            <span class="dimension-label">
+                <i class="fas fa-arrows-alt-v"></i> Alto
+            </span>
+            <span class="dimension-value">7.5 cm</span>
+        </div>
+        </div>
+        <ul class="suaje-features">
+            <li><i class="fas fa-check-circle"></i> Tamaño mediano estándar</li>
+            <li><i class="fas fa-check-circle"></i> Ideal para inventario</li>
+            <li><i class="fas fa-check-circle"></i> Excelente visibilidad</li>
+        </ul>
+        <a href="https://wa.me/523331234567?text=Hola,%20quiero%20información%20sobre%20el%20suaje%2010x7.5cm"
+            target="_blank" class="btn-cotizar">
+            <i class="fab fa-whatsapp"></i> Solicitar Cotización
+        </a>
+        </div>
+
+        <!-- Suaje 4 -->
+        <div class="suaje-card">
+            <h3>Suaje 10 x 10 cm</h3>
+            <div class="suaje-dimensions">
+                <div class="dimension-item">
+                    <span class="dimension-label">
+                        <i class="fas fa-arrows-alt-h"></i> Ancho
+                    </span>
+                    <span class="dimension-value">10 cm</span>
+                </div>
+                <div class="dimension-item">
+                    <span class="dimension-label">
+                        <i class="fas fa-arrows-alt-v"></i> Alto
+                    </span>
+                    <span class="dimension-value">10 cm</span>
+                </div>
+            </div>
+            <ul class="suaje-features">
+                <li><i class="fas fa-check-circle"></i> Formato cuadrado</li>
+                <li><i class="fas fa-check-circle"></i> Máxima área de impresión</li>
+                <li><i class="fas fa-check-circle"></i> Versátil para múltiples usos</li>
+            </ul>
+            <a href="https://wa.me/523331234567?text=Hola,%20quiero%20información%20sobre%20el%20suaje%2010x10cm"
+                target="_blank" class="btn-cotizar">
+                <i class="fab fa-whatsapp"></i> Solicitar Cotización
+            </a>
+        </div>
+
+        <!-- Suaje 5 -->
+        <div class="suaje-card">
+            <h3>Suaje 5 x 2.5 cm</h3>
+            <div class="suaje-dimensions">
+                <div class="dimension-item">
+                    <span class="dimension-label">
+                        <i class="fas fa-arrows-alt-h"></i> Ancho
+                    </span>
+                    <span class="dimension-value">5 cm</span>
+                </div>
+                <div class="dimension-item">
+                    <span class="dimension-label">
+                        <i class="fas fa-arrows-alt-v"></i> Alto
+                    </span>
+                    <span class="dimension-value">2.5 cm</span>
+                </div>
+            </div>
+            <ul class="suaje-features">
+                <li><i class="fas fa-check-circle"></i> Tamaño compacto</li>
+                <li><i class="fas fa-check-circle"></i> Ideal para códigos de barras</li>
+                <li><i class="fas fa-check-circle"></i> Económico y eficiente</li>
+            </ul>
+            <a href="https://wa.me/523331234567?text=Hola,%20quiero%20información%20sobre%20el%20suaje%205x2.5cm"
+                target="_blank" class="btn-cotizar">
+                <i class="fab fa-whatsapp"></i> Solicitar Cotización
+            </a>
+        </div>
+
+        <!-- Suaje 6 -->
+        <div class="suaje-card">
+            <h3>Suaje 7.5 x 2.5 cm</h3>
+            <div class="suaje-dimensions">
+                <div class="dimension-item">
+                    <span class="dimension-label">
+                        <i class="fas fa-arrows-alt-h"></i> Ancho
+                    </span>
+                    <span class="dimension-value">7.5 cm</span>
+                </div>
+                <div class="dimension-item">
+                    <span class="dimension-label">
+                        <i class="fas fa-arrows-alt-v"></i> Alto
+                    </span>
+                    <span class="dimension-value">2.5 cm</span>
+                </div>
+            </div>
+            <ul class="suaje-features">
+                <li><i class="fas fa-check-circle"></i> Formato alargado</li>
+                <li><i class="fas fa-check-circle"></i> Perfecto para etiquetas de precio</li>
+                <li><i class="fas fa-check-circle"></i> Fácil aplicación</li>
+            </ul>
+            <a href="https://wa.me/523331234567?text=Hola,%20quiero%20información%20sobre%20el%20suaje%207.5x2.5cm"
+                target="_blank" class="btn-cotizar">
+                <i class="fab fa-whatsapp"></i> Solicitar Cotización
+            </a>
+        </div>
+
+        <!-- Suaje 7 -->
+        <div class="suaje-card">
+            <h3>Suaje 5 x 5 cm</h3>
+            <div class="suaje-dimensions">
+                <div class="dimension-item">
+                    <span class="dimension-label">
+                        <i class="fas fa-arrows-alt-h"></i> Ancho
+                    </span>
+                    <span class="dimension-value">5 cm</span>
+                </div>
+                <div class="dimension-item">
+                    <span class="dimension-label">
+                        <i class="fas fa-arrows-alt-v"></i> Alto
+                    </span>
+                    <span class="dimension-value">5 cm</span>
+                </div>
+            </div>
+            <ul class="suaje-features">
+                <li><i class="fas fa-check-circle"></i> Formato cuadrado pequeño</li>
+                <li><i class="fas fa-check-circle"></i> Ideal para productos pequeños</li>
+                <li><i class="fas fa-check-circle"></i> Diseño equilibrado</li>
+            </ul>
+            <a href="https://wa.me/523331234567?text=Hola,%20quiero%20información%20sobre%20el%20suaje%205x5cm"
+                target="_blank" class="btn-cotizar">
+                <i class="fab fa-whatsapp"></i> Solicitar Cotización
+            </a>
+        </div>
+
+        <!-- Suaje 8 -->
+        <div class="suaje-card">
+            <h3>Suaje 7.5 x 7.5 cm</h3>
+            <div class="suaje-dimensions">
+                <div class="dimension-item">
+                    <span class="dimension-label">
+                        <i class="fas fa-arrows-alt-h"></i> Ancho
+                    </span>
+                    <span class="dimension-value">7.5 cm</span>
+                </div>
+                <div class="dimension-item">
+                    <span class="dimension-label">
+                        <i class="fas fa-arrows-alt-v"></i> Alto
+                    </span>
+                    <span class="dimension-value">7.5 cm</span>
+                </div>
+            </div>
+            <ul class="suaje-features">
+                <li><i class="fas fa-check-circle"></i> Tamaño mediano cuadrado</li>
+                <li><i class="fas fa-check-circle"></i> Buena área de información</li>
+                <li><i class="fas fa-check-circle"></i> Versátil y práctico</li>
+            </ul>
+            <a href="https://wa.me/523331234567?text=Hola,%20quiero%20información%20sobre%20el%20suaje%207.5x7.5cm"
+                target="_blank" class="btn-cotizar">
+                <i class="fab fa-whatsapp"></i> Solicitar Cotización
+            </a>
+        </div>
+
+        <!-- Suaje 9 -->
+        <div class="suaje-card">
+            <h3>Suaje 15 x 10 cm</h3>
+            <div class="suaje-dimensions">
+                <div class="dimension-item">
+                    <span class="dimension-label">
+                        <i class="fas fa-arrows-alt-h"></i> Ancho
+                    </span>
+                    <span class="dimension-value">15 cm</span>
+                </div>
+                <div class="dimension-item">
+                    <span class="dimension-label">
+                        <i class="fas fa-arrows-alt-v"></i> Alto
+                    </span>
+                    <span class="dimension-value">10 cm</span>
+                </div>
+            </div>
+            <ul class="suaje-features">
+                <li><i class="fas fa-check-circle"></i> Tamaño grande</li>
+                <li><i class="fas fa-check-circle"></i> Máxima visibilidad</li>
+                <li><i class="fas fa-check-circle"></i> Ideal para información detallada</li>
+            </ul>
+            <a href="https://wa.me/523331234567?text=Hola,%20quiero%20información%20sobre%20el%20suaje%2015x10cm"
+                target="_blank" class="btn-cotizar">
+                <i class="fab fa-whatsapp"></i> Solicitar Cotización
+            </a>
+        </div>
+
+        <!-- Suaje 10 -->
+        <div class="suaje-card">
+            <h3>Suaje 20 x 10 cm</h3>
+            <div class="suaje-dimensions">
+                <div class="dimension-item">
+                    <span class="dimension-label">
+                        <i class="fas fa-arrows-alt-h"></i> Ancho
+                    </span>
+                    <span class="dimension-value">20 cm</span>
+                </div>
+                <div class="dimension-item">
+                    <span class="dimension-label">
+                        <i class="fas fa-arrows-alt-v"></i> Alto
+                    </span>
+                    <span class="dimension-value">10 cm</span>
+                </div>
+            </div>
+            <ul class="suaje-features">
+                <li><i class="fas fa-check-circle"></i> Formato extra grande</li>
+                <li><i class="fas fa-check-circle"></i> Ideal para embalajes</li>
+                <li><i class="fas fa-check-circle"></i> Máximo espacio de diseño</li>
+            </ul>
+            <a href="https://wa.me/523331234567?text=Hola,%20quiero%20información%20sobre%20el%20suaje%2020x10cm"
+                target="_blank" class="btn-cotizar">
+                <i class="fab fa-whatsapp"></i> Solicitar Cotización
+            </a>
+        </div>
+
+        <!-- Suaje 11 -->
+        <div class="suaje-card">
+            <h3>Suaje 10 x 15 cm</h3>
+            <div class="suaje-dimensions">
+                <div class="dimension-item">
+                    <span class="dimension-label">
+                        <i class="fas fa-arrows-alt-h"></i> Ancho
+                    </span>
+                    <span class="dimension-value">10 cm</span>
+                </div>
+                <div class="dimension-item">
+                    <span class="dimension-label">
+                        <i class="fas fa-arrows-alt-v"></i> Alto
+                    </span>
+                    <span class="dimension-value">15 cm</span>
+                </div>
+            </div>
+            <ul class="suaje-features">
+                <li><i class="fas fa-check-circle"></i> Formato vertical</li>
+                <li><i class="fas fa-check-circle"></i> Excelente para etiquetas colgantes</li>
+                <li><i class="fas fa-check-circle"></i> Gran área de impresión</li>
+            </ul>
+            <a href="https://wa.me/523331234567?text=Hola,%20quiero%20información%20sobre%20el%20suaje%2010x15cm"
+                target="_blank" class="btn-cotizar">
+                <i class="fab fa-whatsapp"></i> Solicitar Cotización
+            </a>
+        </div>
+
+        <!-- Suaje 12 -->
+        <div class="suaje-card">
+            <h3>Suaje 10 x 20 cm</h3>
+            <div class="suaje-dimensions">
+                <div class="dimension-item">
+                    <span class="dimension-label">
+                        <i class="fas fa-arrows-alt-h"></i> Ancho
+                    </span>
+                    <span class="dimension-value">10 cm</span>
+                </div>
+                <div class="dimension-item">
+                    <span class="dimension-label">
+                        <i class="fas fa-arrows-alt-v"></i> Alto
+                    </span>
+                    <span class="dimension-value">20 cm</span>
+                </div>
+            </div>
+            <ul class="suaje-features">
+                <li><i class="fas fa-check-circle"></i> Formato vertical largo</li>
+                <li><i class="fas fa-check-circle"></i> Ideal para etiquetas informativas</li>
+                <li><i class="fas fa-check-circle"></i> Máxima capacidad de contenido</li>
+            </ul>
+            <a href="https://wa.me/523331234567?text=Hola,%20quiero%20información%20sobre%20el%20suaje%2010x20cm"
+                target="_blank" class="btn-cotizar">
+                <i class="fab fa-whatsapp"></i> Solicitar Cotización
+            </a>
+        </div>
+        </div>
+
+        <!-- Custom Suajes Section -->
+        <section
+            style="background: linear-gradient(135deg, var(--secondary-blue), var(--primary-navy)); color: #fff; padding: 80px 20px; margin-top: 60px;">
+            <div class="container text-center">
+                <h2 class="text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">¿Necesitas un Tamaño Personalizado?
+                </h2>
+                <p class="lead mb-4" style="max-width: 800px; margin: 0 auto;">
+                    Fabricamos suajes con las medidas exactas que necesitas. Envíanos tus especificaciones y te
+                    proporcionaremos una cotización inmediata.
+                </p>
+                <a href="https://wa.me/523331234567?text=Hola,%20necesito%20un%20suaje%20personalizado" target="_blank"
+                    class="btn btn-light btn-lg" style="padding: 15px 40px; font-weight: 600;">
+                    <i class="fab fa-whatsapp"></i> Solicitar Suaje Personalizado
+                </a>
+            </div>
+        </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="text-white text-center text-lg-start footer-dark">
+            <div class="container p-4">
+                <div class="row mt-4">
+                    <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+                        <h5 class="text-uppercase mb-4">GOV Etiquetas</h5>
+
+                        <p>
+                            Soluciones integrales en etiquetado industrial desde el corazón de Jalisco para todo México.
+                            Comprometidos con la calidad y el servicio inmediato.
+                        </p>
+
+                        <p>
+                            Atención personalizada para empresas industriales, minoristas y distribuidores.
+                            Tu socio confiable en identificación y control de productos.
+                        </p>
+
+                        <div class="mt-4">
+                            <ul class="social-icons">
+                                <li>
+                                    <a href="https://wa.me/523331234567" target="_blank" aria-label="WhatsApp">
+                                        <i class="fab fa-whatsapp icon"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="tel:+523331234567" target="_blank" aria-label="Phone">
+                                        <i class="fas fa-phone icon"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase mb-4 pb-1">Enlaces Rápidos</h5>
+
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-2">
+                                <a href="index.html#inicio" class="text-white"><i
+                                        class="fas fa-home me-2"></i>Inicio</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="index.html#nosotros" class="text-white"><i
+                                        class="fas fa-info-circle me-2"></i>Nosotros</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="index.html#servicios" class="text-white"><i
+                                        class="fas fa-cogs me-2"></i>Servicios</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="index.html#productos" class="text-white"><i
+                                        class="fas fa-tags me-2"></i>Productos</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="suajes.html" class="text-white"><i class="fas fa-cut me-2"></i>Suajes</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="index.html#contacto" class="text-white"><i
+                                        class="fas fa-envelope me-2"></i>Contacto</a>
+                            </li>
+                        </ul>
+
+                        <h6 class="text-uppercase mb-3 mt-4">Ubicación</h6>
+                        <p><i class="fas fa-map-marker-alt me-2"></i>C. Isla Socorro 2763A, Jardines de San José, 44956
+                            Guadalajara, Jal.</p>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase mb-4">Información de Contacto</h5>
+
+                        <ul class="fa-ul" style="margin-left: 1.65em;">
+                            <li class="mb-3">
+                                <span class="fa-li"><i class="fas fa-envelope"></i></span>
+                                <span class="ms-2">
+                                    <a href="mailto:contacto@govetiquetas.com.mx"
+                                        class="text-white">contacto@govetiquetas.com.mx</a>
+                                </span>
+                            </li>
+                            <li class="mb-3">
+                                <span class="fa-li"><i class="fas fa-phone"></i></span>
+                                <span class="ms-2">
+                                    <a href="tel:+523331234567" class="text-white">(33) 3123-4567</a>
+                                </span>
+                            </li>
+                            <li class="mb-3">
+                                <span class="fa-li"><i class="fab fa-whatsapp"></i></span>
+                                <span class="ms-2">
+                                    <a href="https://wa.me/523331234567" class="text-white" target="_blank">WhatsApp -
+                                        Respuesta inmediata</a>
+                                </span>
+                            </li>
+                        </ul>
+
+                        <div class="mt-4">
+                            <h6 class="text-uppercase mb-3">Horario de Atención</h6>
+                            <p class="mb-1"><i class="fas fa-clock me-2"></i>Lunes - Viernes: 9:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                © 2025 Copyright:
+                <a class="text-white fw-bold" href="https://govetiquetas.com.mx">GOV Etiquetas</a> - Todos los derechos
+                reservados
+            </div>
+        </footer>
+
+        <!-- WhatsApp Float Button -->
+        <a href="https://wa.me/523331234567" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+
+        <!-- MDB5 JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"></script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const toggler = document.querySelector('.navbar-toggler');
+                const collapse = document.getElementById('navbarSupportedContent');
+
+                if (!toggler || !collapse) return;
+
+                toggler.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    collapse.classList.toggle('show');
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                    this.setAttribute('aria-expanded', String(!isExpanded));
+                });
+
+                const navLinks = collapse.querySelectorAll('.nav-link');
+                navLinks.forEach(function (link) {
+                    link.addEventListener('click', function () {
+                        const togglerVisible = window.getComputedStyle(toggler).display !== 'none';
+                        if (togglerVisible && collapse.classList.contains('show')) {
+                            collapse.classList.remove('show');
+                            toggler.setAttribute('aria-expanded', 'false');
+                        }
+                    });
+                });
+
+                document.addEventListener('click', function (evt) {
+                    const target = evt.target;
+                    if (collapse.classList.contains('show') &&
+                        !collapse.contains(target) &&
+                        !toggler.contains(target)) {
+                        collapse.classList.remove('show');
+                        toggler.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            });
+        </script>
+
+</body>
+
+</html>
