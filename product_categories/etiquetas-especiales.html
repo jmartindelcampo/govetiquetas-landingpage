@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etiquetas Especiales - GOV Etiquetas</title>
+    <link rel="icon" type="image/x-icon" href="../img/logo.ico">
+    <meta name="description" content="Etiquetas industriales especiales, nylon, poliamida y materiales resistentes.">
+
+    <!-- MDB5 CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f7f3ef;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        :root {
+            --primary-navy: #0A2647;
+            --primary-silver: #C0C0C0;
+            --secondary-blue: #205295;
+            --accent-orange: #FF6B35;
+        }
+
+        .text-primary {
+            color: var(--primary-navy) !important;
+        }
+
+        .btn-navy {
+            background-color: var(--primary-navy);
+            color: white;
+        }
+
+        .btn-navy:hover {
+            background-color: var(--secondary-blue);
+            color: white;
+        }
+
+        .navbar {
+            background-color: rgba(10, 38, 71, 0.95);
+        }
+
+        .nav-link {
+            color: white !important;
+            transition: all 0.3s ease;
+            position: relative;
+            display: block;
+            text-transform: uppercase;
+            padding: 10px 20px !important;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            z-index: 1;
+        }
+
+        .nav-link:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-top: 2px solid white;
+            border-bottom: 2px solid white;
+            transform: scaleY(2);
+            opacity: 0;
+            transition: .3s;
+        }
+
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            transform: scale(0);
+            opacity: 0;
+            transition: .3s;
+            z-index: -1;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-navy) !important;
+        }
+
+        .nav-link:hover:before {
+            transform: scaleY(1);
+            opacity: 1;
+        }
+
+        .nav-link:hover:after {
+            transform: scaleY(1);
+            opacity: 1;
+        }
+
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+            text-decoration: none;
+            color: white;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        /* Hero Section */
+        .category-hero {
+            background: linear-gradient(135deg, var(--primary-navy), var(--secondary-blue));
+            color: white;
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1590959651373-a3db0f38a961?w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+        }
+
+        .category-hero .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .breadcrumb {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            padding: 12px 20px;
+            margin-bottom: 30px;
+        }
+
+        .breadcrumb-item a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .breadcrumb-item.active {
+            color: var(--primary-silver);
+        }
+
+        /* Product Card */
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--accent-orange);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .product-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-title {
+            color: var(--primary-navy);
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .product-specs {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+            flex-grow: 1;
+        }
+
+        .product-specs li {
+            color: #666;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .product-specs li i {
+            color: var(--secondary-blue);
+            margin-right: 8px;
+            width: 20px;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .btn-quote {
+            background: var(--secondary-blue);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            border: none;
+        }
+
+        .btn-quote:hover {
+            background: var(--primary-navy);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* Category Info Banner */
+        .category-info {
+            background: linear-gradient(135deg, rgba(10, 38, 71, 0.05), rgba(32, 82, 149, 0.05));
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            border-left: 5px solid var(--secondary-blue);
+        }
+
+        .category-info h3 {
+            color: var(--primary-navy);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .category-info p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Social Media Effect */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .social-icons li a {
+            width: 60px;
+            height: 60px;
+            background-color: #fff;
+            text-align: center;
+            line-height: 60px;
+            font-size: 28px;
+            display: block;
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+            border: 3px solid #fff;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons li a .icon {
+            position: relative;
+            color: var(--primary-navy);
+            transition: .5s;
+            z-index: 3;
+        }
+
+        .social-icons li a:hover .icon {
+            color: #fff;
+            transform: rotateY(360deg);
+        }
+
+        .social-icons li a:before {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: .5s;
+            z-index: 2;
+        }
+
+        .social-icons li a:hover:before {
+            top: 0;
+        }
+
+        .social-icons li:nth-child(1) a:before {
+            background: #1877f2;
+        }
+
+        .social-icons li:nth-child(2) a:before {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+
+        .social-icons li:nth-child(3) a:before {
+            background: #25D366;
+        }
+
+        .social-icons li:nth-child(4) a:before {
+            background: #0077b5;
+        }
+
+        .social-icons li:nth-child(5) a:before {
+            background: var(--primary-silver);
+        }
+
+        .navbar .social-icons li a {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 18px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .navbar .social-icons li a .icon {
+            color: white;
+        }
+
+        .navbar .social-icons li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Footer */
+        .footer-dark {
+            background-color: var(--primary-navy);
+        }
+
+        @media (max-width: 768px) {
+            .category-hero {
+                padding: 100px 0 60px;
+            }
+
+            .product-image {
+                height: 200px;
+            }
+        }
+
+        /* Image Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            overflow: auto;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s;
+        }
+
+        .modal-content-img {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90vh;
+            border-radius: 5px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+            animation: zoomIn 0.3s;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+            z-index: 10000;
+        }
+
+        .modal-close:hover,
+        .modal-close:focus {
+            color: var(--accent-orange);
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .product-image {
+            cursor: pointer;
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0)
+            }
+
+            to {
+                transform: scale(1)
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-0">
+            <div class="container">
+                <a class="navbar-brand text-white" href="../index.html">
+                    <span style="color: var(--primary-silver);">GOV</span>
+                    <span style="color: #fff;">Etiquetas</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-mdb-collapse-init
+                    data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars text-white"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html#inicio">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html#nosotros">Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html#servicios">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html#productos">Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html#ventajas">Ventajas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html#contacto">Contacto</a>
+                        </li>
+                    </ul>
+                    <ul class="social-icons d-flex flex-row">
+                        <li class="d-none">
+                            <a href="#!" aria-label="Facebook">
+                                <i class="fab fa-facebook-f icon"></i>
+                            </a>
+                        </li>
+                        <li class="d-none">
+                            <a href="#!" aria-label="Instagram">
+                                <i class="fab fa-instagram icon"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://wa.me/523331234567" target="_blank" aria-label="WhatsApp">
+                                <i class="fab fa-whatsapp icon"></i>
+                            </a>
+                        </li>
+                        <li class="d-none">
+                            <a href="#!" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in icon"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="tel:+523331234567" target="_blank" aria-label="Phone">
+                                <i class="fas fa-phone icon"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="category-hero">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="../index.html">Inicio</a></li>
+                    <li class="breadcrumb-item"><a href="../index.html#productos">Productos</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Etiquetas Especiales</li>
+                </ol>
+            </nav>
+            <h1 class="display-4 fw-bold mt-4 mb-3">Etiquetas Especiales</h1>
+            <p class="lead">Resistentes al agua, químicos y temperaturas extremas</p>
+        </div>
+    </section>
+
+    <main>
+        <div class="container my-5">
+            <!-- Category Info -->
+            <div class="category-info">
+                <h3><i class="fas fa-info-circle me-2"></i>Sobre esta categoría</h3>
+                <p>
+                    Etiquetas diseñadas para ambientes industriales exigentes. Resistentes a agua, aceites, químicos y
+                    temperaturas extremas. Perfectas para exteriores, refrigeración y aplicaciones especiales como
+                    textiles y joyería.
+                </p>
+            </div>
+
+            <div class="row">
+                <!-- Products Grid -->
+                <div class="col-12">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h5 class="text-primary mb-0">
+                            <i class="fas fa-box me-2"></i>Nuestros Productos
+                        </h5>
+                    </div>
+
+                    <div class="row g-4">
+                        <!-- Product 1 -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="product-card">
+                                <div style="position: relative;">
+                                    <img src="../img/recursos/NYLON 32X64.png" alt="Etiqueta Nylon"
+                                        class="product-image">
+                                    <span class="product-badge">Resistente</span>
+                                </div>
+                                <div class="product-content">
+                                    <h5 class="product-title">Etiqueta de Nylon 32x64</h5>
+                                    <ul class="product-specs">
+                                        <li><i class="fas fa-ruler"></i>32 x 64 mm</li>
+                                        <li><i class="fas fa-layer-group"></i>Nylon textil</li>
+                                        <li><i class="fas fa-tshirt"></i>Para ropa</li>
+                                        <li><i class="fas fa-tint"></i>Lavable</li>
+                                    </ul>
+                                    <div class="product-footer">
+                                        <a href="https://wa.me/523331234567?text=Quiero%20cotizar%20Etiqueta%20Nylon%2032x64"
+                                            target="_blank" class="btn-quote">
+                                            <i class="fab fa-whatsapp me-2"></i>Cotizar
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 2 -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="product-card">
+                                <div style="position: relative;">
+                                    <img src="../img/recursos/NYLON 20X90MM.png" alt="Etiqueta Nylon"
+                                        class="product-image">
+                                </div>
+                                <div class="product-content">
+                                    <h5 class="product-title">Etiqueta de Nylon 20x90</h5>
+                                    <ul class="product-specs">
+                                        <li><i class="fas fa-ruler"></i>20 x 90 mm</li>
+                                        <li><i class="fas fa-layer-group"></i>Nylon textil</li>
+                                        <li><i class="fas fa-tshirt"></i>Para instrucciones</li>
+                                        <li><i class="fas fa-tint"></i>Lavable</li>
+                                    </ul>
+                                    <div class="product-footer">
+                                        <a href="https://wa.me/523331234567?text=Quiero%20cotizar%20Etiqueta%20Nylon%2020x90"
+                                            target="_blank" class="btn-quote">
+                                            <i class="fab fa-whatsapp me-2"></i>Cotizar
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 3 -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="product-card">
+                                <div style="position: relative;">
+                                    <img src="../img/recursos/NYLON 25X38MM.png" alt="Etiqueta Nylon"
+                                        class="product-image">
+                                </div>
+                                <div class="product-content">
+                                    <h5 class="product-title">Etiqueta de Nylon 25x38</h5>
+                                    <ul class="product-specs">
+                                        <li><i class="fas fa-ruler"></i>25 x 38 mm</li>
+                                        <li><i class="fas fa-layer-group"></i>Nylon textil</li>
+                                        <li><i class="fas fa-tshirt"></i>Para tallas</li>
+                                        <li><i class="fas fa-tint"></i>Lavable</li>
+                                    </ul>
+                                    <div class="product-footer">
+                                        <a href="https://wa.me/523331234567?text=Quiero%20cotizar%20Etiqueta%20Nylon%2025x38"
+                                            target="_blank" class="btn-quote">
+                                            <i class="fab fa-whatsapp me-2"></i>Cotizar
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 4 -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="product-card">
+                                <div style="position: relative;">
+                                    <img src="../img/recursos/NYLON MERVETE 32X64.png" alt="Etiqueta Nylon"
+                                        class="product-image">
+                                    <span class="product-badge">Premium</span>
+                                </div>
+                                <div class="product-content">
+                                    <h5 class="product-title">Etiqueta Nylon Mervete</h5>
+                                    <ul class="product-specs">
+                                        <li><i class="fas fa-ruler"></i>32 x 64 mm</li>
+                                        <li><i class="fas fa-layer-group"></i>Nylon Premium</li>
+                                        <li><i class="fas fa-star"></i>Alta calidad</li>
+                                        <li><i class="fas fa-tint"></i>Lavable</li>
+                                    </ul>
+                                    <div class="product-footer">
+                                        <a href="https://wa.me/523331234567?text=Quiero%20cotizar%20Etiqueta%20Nylon%20Mervete"
+                                            target="_blank" class="btn-quote">
+                                            <i class="fab fa-whatsapp me-2"></i>Cotizar
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-white text-center text-lg-start footer-dark mt-5">
+        <div class="container p-4">
+            <div class="row mt-4">
+                <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4">GOV Etiquetas</h5>
+                    <p>
+                        Soluciones integrales en etiquetado industrial desde el corazón de Jalisco para todo México.
+                        Comprometidos con la calidad y el servicio inmediato.
+                    </p>
+                    <p>
+                        Atención personalizada para empresas industriales, minoristas y distribuidores.
+                        Tu socio confiable en identificación y control de productos.
+                    </p>
+                    <div class="mt-4">
+                        <ul class="social-icons">
+                            <li class="d-none"><a href="#!"><i class="fab fa-facebook-f icon"></i></a></li>
+                            <li class="d-none"><a href="#!"><i class="fab fa-instagram icon"></i></a></li>
+                            <li><a href="https://wa.me/523331234567" target="_blank"><i
+                                        class="fab fa-whatsapp icon"></i></a></li>
+                            <li class="d-none"><a href="#!"><i class="fab fa-linkedin-in icon"></i></a></li>
+                            <li><a href="tel:+523331234567" target="_blank"><i class="fas fa-phone icon"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4 pb-1">Enlaces Rápidos</h5>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-2"><a href="../index.html#inicio" class="text-white"><i
+                                    class="fas fa-home me-2"></i>Inicio</a></li>
+                        <li class="mb-2"><a href="../index.html#nosotros" class="text-white"><i
+                                    class="fas fa-info-circle me-2"></i>Nosotros</a></li>
+                        <li class="mb-2"><a href="../index.html#servicios" class="text-white"><i
+                                    class="fas fa-cogs me-2"></i>Servicios</a></li>
+                        <li class="mb-2"><a href="../index.html#productos" class="text-white"><i
+                                    class="fas fa-tags me-2"></i>Productos</a></li>
+                        <li class="mb-2"><a href="../index.html#contacto" class="text-white"><i
+                                    class="fas fa-envelope me-2"></i>Contacto</a></li>
+                    </ul>
+                    <h6 class="text-uppercase mb-3 mt-4">Ubicación</h6>
+                    <p><i class="fas fa-map-marker-alt me-2"></i>C. Isla Socorro 2763A, Jardines de San José, 44956
+                        Guadalajara, Jal.</p>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4">Información de Contacto</h5>
+                    <ul class="fa-ul" style="margin-left: 1.65em;">
+                        <li class="mb-3"><span class="fa-li"><i class="fas fa-envelope"></i></span><span class="ms-2"><a
+                                    href="mailto:contacto@govetiquetas.com.mx"
+                                    class="text-white">contacto@govetiquetas.com.mx</a></span></li>
+                        <li class="mb-3"><span class="fa-li"><i class="fas fa-phone"></i></span><span class="ms-2"><a
+                                    href="tel:+523331234567" class="text-white">(33) 3123-4567</a></span></li>
+                        <li class="mb-3"><span class="fa-li"><i class="fab fa-whatsapp"></i></span><span class="ms-2"><a
+                                    href="https://wa.me/523331234567" class="text-white" target="_blank">WhatsApp -
+                                    Respuesta inmediata</a></span></li>
+                    </ul>
+                    <div class="mt-4">
+                        <h6 class="text-uppercase mb-3">Horario de Atención</h6>
+                        <p class="mb-1"><i class="fas fa-clock me-2"></i>Lunes - Viernes: 9:00 AM - 6:00 PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal-overlay">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content-img" id="modalImage">
+    </div>
+
+    <script>
+        // Image Modal Script
+        document.addEventListener('DOMContentLoaded', function () {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const closeBtn = document.querySelector('.modal-close');
+            const productImages = document.querySelectorAll('.product-image');
+
+            productImages.forEach(img => {
+                img.addEventListener('click', function () {
+                    modal.style.display = 'flex';
+                    modalImg.src = this.src;
+                });
+            });
+
+            closeBtn.addEventListener('click', function () {
+                modal.style.display = 'none';
+            });
+
+            modal.addEventListener('click', function (e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+
+            // Close on Escape key
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && modal.style.display === 'flex') {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

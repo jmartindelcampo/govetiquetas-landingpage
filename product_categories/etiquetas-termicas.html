@@ -422,6 +422,75 @@
                 height: 200px;
             }
         }
+
+        /* Image Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            overflow: auto;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s;
+        }
+
+        .modal-content-img {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90vh;
+            border-radius: 5px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+            animation: zoomIn 0.3s;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+            z-index: 10000;
+        }
+
+        .modal-close:hover,
+        .modal-close:focus {
+            color: var(--accent-orange);
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .product-image {
+            cursor: pointer;
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0)
+            }
+
+            to {
+                transform: scale(1)
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0
+            }
+
+            to {
+                opacity: 1
+            }
+        }
     </style>
 </head>
 
@@ -536,20 +605,19 @@
                         <div class="col-md-6 col-lg-4">
                             <div class="product-card">
                                 <div style="position: relative;">
-                                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&q=80"
-                                        alt="Etiqueta" class="product-image">
+                                    <img src="../img/recursos/80X70 TERMICO.png" alt="Etiqueta" class="product-image">
                                     <span class="product-badge">Popular</span>
                                 </div>
                                 <div class="product-content">
-                                    <h5 class="product-title">Etiqueta Térmica 4x6</h5>
+                                    <h5 class="product-title">Etiqueta Térmica 80x70 mm</h5>
                                     <ul class="product-specs">
-                                        <li><i class="fas fa-ruler"></i>100 x 150 mm</li>
+                                        <li><i class="fas fa-ruler"></i>80 x 70 mm</li>
                                         <li><i class="fas fa-layer-group"></i>Papel térmico</li>
                                         <li><i class="fas fa-box"></i>Rollo 500 etiquetas</li>
                                         <li><i class="fas fa-check-circle"></i>Adhesivo permanente</li>
                                     </ul>
                                     <div class="product-footer">
-                                        <a href="https://wa.me/523331234567?text=Quiero%20cotizar%20Etiqueta%20Térmica%204x6"
+                                        <a href="https://wa.me/523331234567?text=Quiero%20cotizar%20Etiqueta%20Térmica%2080x70"
                                             target="_blank" class="btn-quote">
                                             <i class="fab fa-whatsapp me-2"></i>Cotizar
                                         </a>
@@ -562,20 +630,19 @@
                         <div class="col-md-6 col-lg-4">
                             <div class="product-card">
                                 <div style="position: relative;">
-                                    <img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=400&q=80"
-                                        alt="Etiqueta" class="product-image">
+                                    <img src="../img/recursos/80X80 TERMICO.png" alt="Etiqueta" class="product-image">
                                 </div>
                                 <div class="product-content">
-                                    <h5 class="product-title">Etiqueta Térmica 4x4</h5>
+                                    <h5 class="product-title">Etiqueta Térmica 80x80 mm</h5>
                                     <ul class="product-specs">
-                                        <li><i class="fas fa-ruler"></i>100 x 100 mm</li>
+                                        <li><i class="fas fa-ruler"></i>80 x 80 mm</li>
                                         <li><i class="fas fa-layer-group"></i>Papel térmico</li>
                                         <li><i class="fas fa-box"></i>Rollo 1000 etiquetas</li>
                                         <li><i class="fas fa-check-circle"></i>Adhesivo permanente</li>
                                     </ul>
                                     <div class="product-footer">
 
-                                        <a href="https://wa.me/523331234567?text=Quiero%20cotizar%20Etiqueta%20Térmica%204x4"
+                                        <a href="https://wa.me/523331234567?text=Quiero%20cotizar%20Etiqueta%20Térmica%2080x80"
                                             target="_blank" class="btn-quote">
                                             <i class="fab fa-whatsapp me-2"></i>Cotizar
                                         </a>
@@ -588,21 +655,20 @@
                         <div class="col-md-6 col-lg-4">
                             <div class="product-card">
                                 <div style="position: relative;">
-                                    <img src="https://images.unsplash.com/photo-1590959651373-a3db0f38a961?w=400&q=80"
-                                        alt="Etiqueta" class="product-image">
+                                    <img src="../img/recursos/102X102 C1.png" alt="Etiqueta" class="product-image">
                                     <span class="product-badge">Nuevo</span>
                                 </div>
                                 <div class="product-content">
-                                    <h5 class="product-title">Etiqueta Polipropileno</h5>
+                                    <h5 class="product-title">Etiqueta Transferencia 4x4"</h5>
                                     <ul class="product-specs">
-                                        <li><i class="fas fa-ruler"></i>75 x 50 mm</li>
-                                        <li><i class="fas fa-layer-group"></i>Polipropileno</li>
-                                        <li><i class="fas fa-box"></i>Rollo 2000 etiquetas</li>
-                                        <li><i class="fas fa-tint"></i>Resistente al agua</li>
+                                        <li><i class="fas fa-ruler"></i>102 x 102 mm</li>
+                                        <li><i class="fas fa-layer-group"></i>Transferencia Térmica</li>
+                                        <li><i class="fas fa-box"></i>Rollo 500 etiquetas</li>
+                                        <li><i class="fas fa-tint"></i>Requiere Ribbon</li>
                                     </ul>
                                     <div class="product-footer">
 
-                                        <a href="https://wa.me/523331234567?text=Quiero%20cotizar%20Etiqueta%20Polipropileno"
+                                        <a href="https://wa.me/523331234567?text=Quiero%20cotizar%20Etiqueta%20Transferencia%204x4"
                                             target="_blank" class="btn-quote">
                                             <i class="fab fa-whatsapp me-2"></i>Cotizar
                                         </a>
@@ -615,20 +681,19 @@
                         <div class="col-md-6 col-lg-4">
                             <div class="product-card">
                                 <div style="position: relative;">
-                                    <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&q=80"
-                                        alt="Etiqueta" class="product-image">
+                                    <img src="../img/recursos/58x40.png" alt="Etiqueta" class="product-image">
                                 </div>
                                 <div class="product-content">
-                                    <h5 class="product-title">Etiqueta Mini 2x1</h5>
+                                    <h5 class="product-title">Etiqueta Báscula 58x40 mm</h5>
                                     <ul class="product-specs">
-                                        <li><i class="fas fa-ruler"></i>50 x 25 mm</li>
+                                        <li><i class="fas fa-ruler"></i>58 x 40 mm</li>
                                         <li><i class="fas fa-layer-group"></i>Papel térmico</li>
                                         <li><i class="fas fa-box"></i>Rollo 3000 etiquetas</li>
-                                        <li><i class="fas fa-check-circle"></i>Alta densidad</li>
+                                        <li><i class="fas fa-check-circle"></i>Medida Estándar</li>
                                     </ul>
                                     <div class="product-footer">
 
-                                        <a href="https://wa.me/523331234567?text=Quiero%20cotizar%20Etiqueta%20Mini%202x1"
+                                        <a href="https://wa.me/523331234567?text=Quiero%20cotizar%20Etiqueta%20Bascula%2058x40"
                                             target="_blank" class="btn-quote">
                                             <i class="fab fa-whatsapp me-2"></i>Cotizar
                                         </a>
@@ -641,21 +706,20 @@
                         <div class="col-md-6 col-lg-4">
                             <div class="product-card">
                                 <div style="position: relative;">
-                                    <img src="https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=400&q=80"
-                                        alt="Etiqueta" class="product-image">
+                                    <img src="../img/recursos/76x51 C1.png" alt="Etiqueta" class="product-image">
                                     <span class="product-badge">Oferta</span>
                                 </div>
                                 <div class="product-content">
-                                    <h5 class="product-title">Etiqueta Poliéster Premium</h5>
+                                    <h5 class="product-title">Etiqueta Transferencia 3x2"</h5>
                                     <ul class="product-specs">
-                                        <li><i class="fas fa-ruler"></i>100 x 75 mm</li>
-                                        <li><i class="fas fa-layer-group"></i>Poliéster</li>
+                                        <li><i class="fas fa-ruler"></i>76 x 51 mm</li>
+                                        <li><i class="fas fa-layer-group"></i>Transferencia Térmica</li>
                                         <li><i class="fas fa-box"></i>Rollo 1500 etiquetas</li>
-                                        <li><i class="fas fa-fire"></i>Alta temperatura</li>
+                                        <li><i class="fas fa-fire"></i>Alta calidad</li>
                                     </ul>
                                     <div class="product-footer">
 
-                                        <a href="https://wa.me/523331234567?text=Quiero%20cotizar%20Etiqueta%20Poliéster%20Premium"
+                                        <a href="https://wa.me/523331234567?text=Quiero%20cotizar%20Etiqueta%20Transferencia%203x2"
                                             target="_blank" class="btn-quote">
                                             <i class="fab fa-whatsapp me-2"></i>Cotizar
                                         </a>
@@ -668,20 +732,19 @@
                         <div class="col-md-6 col-lg-4">
                             <div class="product-card">
                                 <div style="position: relative;">
-                                    <img src="https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=400&q=80"
-                                        alt="Etiqueta" class="product-image">
+                                    <img src="../img/recursos/102X152 C3.png" alt="Etiqueta" class="product-image">
                                 </div>
                                 <div class="product-content">
-                                    <h5 class="product-title">Etiqueta Industrial XL</h5>
+                                    <h5 class="product-title">Etiqueta Envío 4x6"</h5>
                                     <ul class="product-specs">
-                                        <li><i class="fas fa-ruler"></i>150 x 200 mm</li>
-                                        <li><i class="fas fa-layer-group"></i>Papel térmico reforzado</li>
+                                        <li><i class="fas fa-ruler"></i>102 x 152 mm</li>
+                                        <li><i class="fas fa-layer-group"></i>Transferencia/Térmica</li>
                                         <li><i class="fas fa-box"></i>Rollo 300 etiquetas</li>
-                                        <li><i class="fas fa-industry"></i>Uso industrial</li>
+                                        <li><i class="fas fa-industry"></i>Estándar Paquetería</li>
                                     </ul>
                                     <div class="product-footer">
 
-                                        <a href="https://wa.me/523331234567?text=Quiero%20cotizar%20Etiqueta%20Industrial%20XL"
+                                        <a href="https://wa.me/523331234567?text=Quiero%20cotizar%20Etiqueta%20Envio%204x6"
                                             target="_blank" class="btn-quote">
                                             <i class="fab fa-whatsapp me-2"></i>Cotizar
                                         </a>
@@ -859,6 +922,45 @@
         });
     </script>
 
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal-overlay">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content-img" id="modalImage">
+    </div>
+
+    <script>
+        // Image Modal Script
+        document.addEventListener('DOMContentLoaded', function () {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const closeBtn = document.querySelector('.modal-close');
+            const productImages = document.querySelectorAll('.product-image');
+
+            productImages.forEach(img => {
+                img.addEventListener('click', function () {
+                    modal.style.display = 'flex';
+                    modalImg.src = this.src;
+                });
+            });
+
+            closeBtn.addEventListener('click', function () {
+                modal.style.display = 'none';
+            });
+
+            modal.addEventListener('click', function (e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+
+            // Close on Escape key
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && modal.style.display === 'flex') {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
