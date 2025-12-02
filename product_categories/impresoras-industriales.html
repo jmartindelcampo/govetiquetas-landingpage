@@ -7,7 +7,9 @@
     <title>Impresoras Industriales - GOV Etiquetas</title>
     <link rel="icon" type="image/x-icon" href="../img/logo.ico">
     <meta name="description"
-        content="Impresoras de etiquetas industriales de las mejores marcas: Zebra, TSC, Godex, Sato, Honeywell.">
+        content="Venta de impresoras de etiquetas industriales y de escritorio. Marcas Zebra, Honeywell, TSC, Godex. Soporte técnico.">
+    <meta name="keywords"
+        content="IMPRESORAS INDUSTRIALES, ZEBRA, HONEYWELL, TSC, GODEX, IMPRESORAS ETIQUETAS, CODIGO DE BARRAS">
 
     <!-- MDB5 CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css" rel="stylesheet">
@@ -166,7 +168,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=1600&q=80');
+            background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1600&q=80');
             background-size: cover;
             background-position: center;
             opacity: 0.1;
@@ -281,6 +283,8 @@
             transition: all 0.3s ease;
             font-weight: 600;
             border: none;
+            width: 100%;
+            text-align: center;
         }
 
         .btn-quote:hover {
@@ -307,6 +311,11 @@
         .category-info p {
             color: #666;
             line-height: 1.8;
+        }
+
+        /* Footer */
+        .footer-dark {
+            background-color: var(--primary-navy);
         }
 
         /* Social Media Effect */
@@ -362,6 +371,7 @@
             top: 0;
         }
 
+        /* Colores específicos por red social */
         .social-icons li:nth-child(1) a:before {
             background: #1877f2;
         }
@@ -382,6 +392,7 @@
             background: var(--primary-silver);
         }
 
+        /* Social icons in navbar */
         .navbar .social-icons li a {
             width: 40px;
             height: 40px;
@@ -397,21 +408,6 @@
 
         .navbar .social-icons li a:hover {
             background-color: rgba(255, 255, 255, 0.2);
-        }
-
-        /* Footer */
-        .footer-dark {
-            background-color: var(--primary-navy);
-        }
-
-        @media (max-width: 768px) {
-            .category-hero {
-                padding: 100px 0 60px;
-            }
-
-            .product-image {
-                height: 200px;
-            }
         }
 
         /* Image Modal */
@@ -510,8 +506,29 @@
                         <li class="nav-item">
                             <a class="nav-link" href="../index.html#servicios">Servicios</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../index.html#productos">Productos</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown" href="#" id="navbarDropdown" role="button"
+                                data-mdb-toggle="dropdown" aria-expanded="false">
+                                Productos
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="../product_categories/rollos-tickets.html">Rollos de
+                                        Tickets</a></li>
+                                <li><a class="dropdown-item" href="../product_categories/ribbons.html">Ribbons</a></li>
+                                <li><a class="dropdown-item"
+                                        href="../product_categories/maquinas-plastiflecha.html">Plastifechas</a></li>
+                                <li><a class="dropdown-item"
+                                        href="../product_categories/impresoras-industriales.html">Impresoras
+                                        Industriales</a></li>
+                                <li><a class="dropdown-item"
+                                        href="../product_categories/etiquetas-especiales.html">Etiquetas</a></li>
+                                <li><a class="dropdown-item" href="../product_categories/cintas-adhesivas.html">Cintas
+                                        Adhesivas</a></li>
+                                <li><a class="dropdown-item"
+                                        href="../product_categories/despachadores-cintas.html">Despachadores de
+                                        Cintas</a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="../index.html#ventajas">Ventajas</a>
@@ -563,7 +580,7 @@
                 </ol>
             </nav>
             <h1 class="display-4 fw-bold mt-4 mb-3">Impresoras Industriales</h1>
-            <p class="lead">Equipos de impresión de alto rendimiento para todas sus necesidades</p>
+            <p class="lead">Equipos de alto rendimiento para etiquetado profesional</p>
         </div>
     </section>
 
@@ -573,9 +590,10 @@
             <div class="category-info">
                 <h3><i class="fas fa-info-circle me-2"></i>Sobre esta categoría</h3>
                 <p>
-                    Distribuimos las mejores marcas de impresoras de etiquetas del mercado. Equipos robustos diseñados
-                    para operar en entornos industriales, ofreciendo alta velocidad, precisión y durabilidad. Contamos
-                    con modelos de escritorio e industriales.
+                    Impresoras de etiquetas de las mejores marcas del mercado. Desde equipos de escritorio compactos
+                    hasta
+                    impresoras industriales de alto volumen. Garantía y soporte técnico especializado para asegurar la
+                    continuidad de tu operación.
                 </p>
             </div>
 
@@ -593,19 +611,20 @@
                         <div class="col-md-6 col-lg-4">
                             <div class="product-card">
                                 <div style="position: relative;">
-                                    <img src="../img/recursos/ZEBRA.png" alt="Impresora Zebra" class="product-image">
-                                    <span class="product-badge">Líder</span>
+                                    <img src="../img/recursos/ZEBRA.png" alt="Impresora Zebra Industrial"
+                                        class="product-image">
+                                    <span class="product-badge">Top Ventas</span>
                                 </div>
                                 <div class="product-content">
-                                    <h5 class="product-title">Impresoras Zebra</h5>
+                                    <h5 class="product-title">Impresora Industrial Zebra</h5>
                                     <ul class="product-specs">
-                                        <li><i class="fas fa-print"></i>Transferencia térmica</li>
-                                        <li><i class="fas fa-tachometer-alt"></i>Alta velocidad</li>
-                                        <li><i class="fas fa-wifi"></i>Conectividad avanzada</li>
-                                        <li><i class="fas fa-shield-alt"></i>Uso rudo</li>
+                                        <li><i class="fas fa-industry"></i>Uso Industrial</li>
+                                        <li><i class="fas fa-print"></i>Alto Volumen</li>
+                                        <li><i class="fas fa-wifi"></i>Conectividad Avanzada</li>
+                                        <li><i class="fas fa-shield-alt"></i>Carcasa Metálica</li>
                                     </ul>
                                     <div class="product-footer">
-                                        <a href="https://wa.me/523331234567?text=Quiero%20cotizar%20Impresora%20Zebra"
+                                        <a href="https://wa.me/523331234567?text=Quiero%20cotizar%20Impresora%20Zebra%20Industrial"
                                             target="_blank" class="btn-quote">
                                             <i class="fab fa-whatsapp me-2"></i>Cotizar
                                         </a>
@@ -618,19 +637,19 @@
                         <div class="col-md-6 col-lg-4">
                             <div class="product-card">
                                 <div style="position: relative;">
-                                    <img src="../img/recursos/IMRESORA TICKET.png" alt="Impresora Epson TM"
+                                    <img src="../img/recursos/ZEBRA ESCRITORIO.png" alt="Impresora Zebra Escritorio"
                                         class="product-image">
                                 </div>
                                 <div class="product-content">
-                                    <h5 class="product-title">Impresoras Epson TM</h5>
+                                    <h5 class="product-title">Impresora Zebra Escritorio</h5>
                                     <ul class="product-specs">
-                                        <li><i class="fas fa-receipt"></i> Impresión térmica de tickets</li>
-                                        <li><i class="fas fa-bolt"></i> Alta velocidad de impresión</li>
-                                        <li><i class="fas fa-cogs"></i> Conectividad USB / Ethernet / Serial</li>
-                                        <li><i class="fas fa-check-circle"></i> Alta durabilidad y confiabilidad</li>
+                                        <li><i class="fas fa-desktop"></i>Diseño Compacto</li>
+                                        <li><i class="fas fa-print"></i>Volumen Medio</li>
+                                        <li><i class="fas fa-check-circle"></i>Fácil de Usar</li>
+                                        <li><i class="fas fa-usb"></i>USB / Ethernet</li>
                                     </ul>
                                     <div class="product-footer">
-                                        <a href="https://wa.me/523331234567?text=Quiero%20cotizar%20Impresora%20Epson%20TM"
+                                        <a href="https://wa.me/523331234567?text=Quiero%20cotizar%20Impresora%20Zebra%20Escritorio"
                                             target="_blank" class="btn-quote">
                                             <i class="fab fa-whatsapp me-2"></i>Cotizar
                                         </a>
@@ -639,42 +658,45 @@
                             </div>
                         </div>
 
-                        <!-- <div class="col-md-6 col-lg-4">
+                        <!-- Product 3 -->
+                        <div class="col-md-6 col-lg-4">
                             <div class="product-card">
                                 <div style="position: relative;">
-                                    <img src="../img/recursos/TSC.png" alt="Impresora TSC" class="product-image">
+                                    <img src="../img/recursos/TSC TE200.png" alt="Impresora TSC TE200"
+                                        class="product-image">
+                                    <span class="product-badge">Económica</span>
                                 </div>
                                 <div class="product-content">
-                                    <h5 class="product-title">Impresoras TSC</h5>
+                                    <h5 class="product-title">Impresora TSC TE200</h5>
                                     <ul class="product-specs">
-                                        <li><i class="fas fa-print"></i>Escritorio e Industrial</li>
-                                        <li><i class="fas fa-dollar-sign"></i>Excelente costo-beneficio</li>
-                                        <li><i class="fas fa-cogs"></i>Fácil mantenimiento</li>
-                                        <li><i class="fas fa-check-circle"></i>Garantía extendida</li>
+                                        <li><i class="fas fa-desktop"></i>Escritorio</li>
+                                        <li><i class="fas fa-print"></i>Transferencia Térmica</li>
+                                        <li><i class="fas fa-dollar-sign"></i>Excelente Precio</li>
+                                        <li><i class="fas fa-check-circle"></i>Durable</li>
                                     </ul>
                                     <div class="product-footer">
-                                        <a href="https://wa.me/523331234567?text=Quiero%20cotizar%20Impresora%20TSC"
+                                        <a href="https://wa.me/523331234567?text=Quiero%20cotizar%20Impresora%20TSC%20TE200"
                                             target="_blank" class="btn-quote">
                                             <i class="fab fa-whatsapp me-2"></i>Cotizar
                                         </a>
                                     </div>
                                 </div>
                             </div>
-                        </div> -->
+                        </div>
 
-                        <!-- Product 3 -->
+                        <!-- Product 4 -->
                         <div class="col-md-6 col-lg-4">
                             <div class="product-card">
                                 <div style="position: relative;">
                                     <img src="../img/recursos/GODEX.png" alt="Impresora Godex" class="product-image">
                                 </div>
                                 <div class="product-content">
-                                    <h5 class="product-title">Impresoras Godex</h5>
+                                    <h5 class="product-title">Impresora Godex</h5>
                                     <ul class="product-specs">
-                                        <li><i class="fas fa-print"></i>Versatilidad</li>
-                                        <li><i class="fas fa-box-open"></i>Incluye software</li>
-                                        <li><i class="fas fa-microchip"></i>Tecnología avanzada</li>
-                                        <li><i class="fas fa-star"></i>Alta resolución</li>
+                                        <li><i class="fas fa-desktop"></i>Versátil</li>
+                                        <li><i class="fas fa-print"></i>Multifuncional</li>
+                                        <li><i class="fas fa-tools"></i>Incluye Software</li>
+                                        <li><i class="fas fa-check-circle"></i>Garantía</li>
                                     </ul>
                                     <div class="product-footer">
                                         <a href="https://wa.me/523331234567?text=Quiero%20cotizar%20Impresora%20Godex"
@@ -686,55 +708,55 @@
                             </div>
                         </div>
 
-                        <!-- Product 4 -->
-                        <!-- <div class="col-md-6 col-lg-4">
-                            <div class="product-card">
-                                <div style="position: relative;">
-                                    <img src="../img/recursos/SATO.png" alt="Impresora Sato" class="product-image">
-                                </div>
-                                <div class="product-content">
-                                    <h5 class="product-title">Impresoras Sato</h5>
-                                    <ul class="product-specs">
-                                        <li><i class="fas fa-print"></i>Innovación japonesa</li>
-                                        <li><i class="fas fa-network-wired"></i>IoT Ready</li>
-                                        <li><i class="fas fa-industry"></i>Automatización</li>
-                                        <li><i class="fas fa-check-circle"></i>Precisión</li>
-                                    </ul>
-                                    <div class="product-footer">
-                                        <a href="https://wa.me/523331234567?text=Quiero%20cotizar%20Impresora%20Sato"
-                                            target="_blank" class="btn-quote">
-                                            <i class="fab fa-whatsapp me-2"></i>Cotizar
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
-
                         <!-- Product 5 -->
-                        <!-- <div class="col-md-6 col-lg-4">
+                        <div class="col-md-6 col-lg-4">
                             <div class="product-card">
                                 <div style="position: relative;">
-                                    <img src="../img/recursos/HONEYWELL.png" alt="Impresora Honeywell"
+                                    <img src="../img/recursos/IMRESORA TICKET.png" alt="Impresora de Tickets"
                                         class="product-image">
                                 </div>
                                 <div class="product-content">
-                                    <h5 class="product-title">Impresoras Honeywell</h5>
+                                    <h5 class="product-title">Impresora de Tickets</h5>
                                     <ul class="product-specs">
-                                        <li><i class="fas fa-print"></i>Alto volumen</li>
-                                        <li><i class="fas fa-server"></i>Integración sistemas</li>
-                                        <li><i class="fas fa-hdd"></i>Robusta</li>
-                                        <li><i class="fas fa-check-circle"></i>Smart Printing</li>
+                                        <li><i class="fas fa-receipt"></i>Punto de Venta</li>
+                                        <li><i class="fas fa-bolt"></i>Impresión Rápida</li>
+                                        <li><i class="fas fa-cut"></i>Corte Automático</li>
+                                        <li><i class="fas fa-usb"></i>Conexión USB</li>
                                     </ul>
                                     <div class="product-footer">
-                                        <a href="https://wa.me/523331234567?text=Quiero%20cotizar%20Impresora%20Honeywell"
+                                        <a href="https://wa.me/523331234567?text=Quiero%20cotizar%20Impresora%20de%20Tickets"
                                             target="_blank" class="btn-quote">
                                             <i class="fab fa-whatsapp me-2"></i>Cotizar
                                         </a>
                                     </div>
                                 </div>
                             </div>
-                        </div> -->
+                        </div>
 
+                        <!-- Product 6 -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="product-card">
+                                <div style="position: relative;">
+                                    <img src="../img/recursos/CABEZAL DE IMPRESION ZEBRA.png"
+                                        alt="Cabezales de Impresión" class="product-image">
+                                </div>
+                                <div class="product-content">
+                                    <h5 class="product-title">Cabezales de Impresión</h5>
+                                    <ul class="product-specs">
+                                        <li><i class="fas fa-tools"></i>Refacciones Originales</li>
+                                        <li><i class="fas fa-print"></i>Zebra, Datamax, etc.</li>
+                                        <li><i class="fas fa-check-circle"></i>Garantizados</li>
+                                        <li><i class="fas fa-wrench"></i>Instalación Disponible</li>
+                                    </ul>
+                                    <div class="product-footer">
+                                        <a href="https://wa.me/523331234567?text=Quiero%20cotizar%20Cabezales%20de%20Impresion"
+                                            target="_blank" class="btn-quote">
+                                            <i class="fab fa-whatsapp me-2"></i>Cotizar
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
                 </div>
@@ -748,100 +770,160 @@
             <div class="row mt-4">
                 <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
                     <h5 class="text-uppercase mb-4">GOV Etiquetas</h5>
+
                     <p>
                         Soluciones integrales en etiquetado industrial desde el corazón de Jalisco para todo México.
                         Comprometidos con la calidad y el servicio inmediato.
                     </p>
+
                     <p>
                         Atención personalizada para empresas industriales, minoristas y distribuidores.
                         Tu socio confiable en identificación y control de productos.
                     </p>
+
                     <div class="mt-4">
                         <ul class="social-icons">
-                            <li class="d-none"><a href="#!"><i class="fab fa-facebook-f icon"></i></a></li>
-                            <li class="d-none"><a href="#!"><i class="fab fa-instagram icon"></i></a></li>
-                            <li><a href="https://wa.me/523331234567" target="_blank"><i
-                                        class="fab fa-whatsapp icon"></i></a></li>
-                            <li class="d-none"><a href="#!"><i class="fab fa-linkedin-in icon"></i></a></li>
-                            <li><a href="tel:+523331234567" target="_blank"><i class="fas fa-phone icon"></i></a></li>
+                            <li class="d-none">
+                                <a href="#!" aria-label="Facebook">
+                                    <i class="fab fa-facebook-f icon"></i>
+                                </a>
+                            </li>
+                            <li class="d-none">
+                                <a href="#!" aria-label="Instagram">
+                                    <i class="fab fa-instagram icon"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://wa.me/523331234567" target="_blank" aria-label="WhatsApp">
+                                    <i class="fab fa-whatsapp icon"></i>
+                                </a>
+                            </li>
+                            <li class="d-none">
+                                <a href="#!" aria-label="LinkedIn">
+                                    <i class="fab fa-linkedin-in icon"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="tel:+523331234567" target="_blank" aria-label="Phone">
+                                    <i class="fas fa-phone icon"></i>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
+
                 <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
                     <h5 class="text-uppercase mb-4 pb-1">Enlaces Rápidos</h5>
+
                     <ul class="list-unstyled mb-4">
-                        <li class="mb-2"><a href="../index.html#inicio" class="text-white"><i
-                                    class="fas fa-home me-2"></i>Inicio</a></li>
-                        <li class="mb-2"><a href="../index.html#nosotros" class="text-white"><i
-                                    class="fas fa-info-circle me-2"></i>Nosotros</a></li>
-                        <li class="mb-2"><a href="../index.html#servicios" class="text-white"><i
-                                    class="fas fa-cogs me-2"></i>Servicios</a></li>
-                        <li class="mb-2"><a href="../index.html#productos" class="text-white"><i
-                                    class="fas fa-tags me-2"></i>Productos</a></li>
-                        <li class="mb-2"><a href="../index.html#contacto" class="text-white"><i
-                                    class="fas fa-envelope me-2"></i>Contacto</a></li>
+                        <li class="mb-2">
+                            <a href="../index.html#inicio" class="text-white"><i class="fas fa-home me-2"></i>Inicio</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="../index.html#nosotros" class="text-white"><i
+                                    class="fas fa-info-circle me-2"></i>Nosotros</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="../index.html#servicios" class="text-white"><i
+                                    class="fas fa-cogs me-2"></i>Servicios</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="../index.html#productos" class="text-white"><i
+                                    class="fas fa-tags me-2"></i>Productos</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="../index.html#contacto" class="text-white"><i
+                                    class="fas fa-envelope me-2"></i>Contacto</a>
+                        </li>
                     </ul>
-                    <h6 class="text-uppercase mb-3 mt-4">Ubicación</h6>
-                    <p><i class="fas fa-map-marker-alt me-2"></i>C. Isla Socorro 2763A, Jardines de San José, 44956
-                        Guadalajara, Jal.</p>
                 </div>
+
                 <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
                     <h5 class="text-uppercase mb-4">Información de Contacto</h5>
+
                     <ul class="fa-ul" style="margin-left: 1.65em;">
-                        <li class="mb-3"><span class="fa-li"><i class="fas fa-envelope"></i></span><span class="ms-2"><a
-                                    href="mailto:contacto@govetiquetas.com.mx"
-                                    class="text-white">contacto@govetiquetas.com.mx</a></span></li>
-                        <li class="mb-3"><span class="fa-li"><i class="fas fa-phone"></i></span><span class="ms-2"><a
-                                    href="tel:+523331234567" class="text-white">(33) 3123-4567</a></span></li>
-                        <li class="mb-3"><span class="fa-li"><i class="fab fa-whatsapp"></i></span><span class="ms-2"><a
-                                    href="https://wa.me/523331234567" class="text-white" target="_blank">WhatsApp -
-                                    Respuesta inmediata</a></span></li>
+                        <li class="mb-3">
+                            <span class="fa-li"><i class="fas fa-envelope"></i></span>
+                            <span class="ms-2">
+                                <a href="mailto:contacto@govetiquetas.com.mx"
+                                    class="text-white">contacto@govetiquetas.com.mx</a>
+                            </span>
+                        </li>
+                        <li class="mb-3">
+                            <span class="fa-li"><i class="fas fa-phone"></i></span>
+                            <span class="ms-2">
+                                <a href="tel:+523331234567" class="text-white">(33) 3123-4567</a>
+                            </span>
+                        </li>
+                        <li class="mb-3">
+                            <span class="fa-li"><i class="fab fa-whatsapp"></i></span>
+                            <span class="ms-2">
+                                <a href="https://wa.me/523331234567" class="text-white" target="_blank">WhatsApp -
+                                    Respuesta inmediata</a>
+                            </span>
+                        </li>
                     </ul>
-                    <div class="mt-4">
-                        <h6 class="text-uppercase mb-3">Horario de Atención</h6>
-                        <p class="mb-1"><i class="fas fa-clock me-2"></i>Lunes - Viernes: 9:00 AM - 6:00 PM</p>
-                    </div>
                 </div>
             </div>
         </div>
+
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2025 Copyright:
+            <a class="text-white fw-bold" href="https://govetiquetas.com.mx">GOV Etiquetas</a>
+        </div>
     </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/523331234567" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <!-- Image Modal -->
     <div id="imageModal" class="modal-overlay">
         <span class="modal-close">&times;</span>
-        <img class="modal-content-img" id="modalImage">
+        <img class="modal-content-img" id="img01">
     </div>
 
+    <!-- MDB5 JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"></script>
+
     <script>
-        // Image Modal Script
         document.addEventListener('DOMContentLoaded', function () {
+            // Navbar toggler logic
+            const toggler = document.querySelector('.navbar-toggler');
+            const collapse = document.getElementById('navbarSupportedContent');
+
+            if (toggler && collapse) {
+                toggler.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    collapse.classList.toggle('show');
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                    this.setAttribute('aria-expanded', String(!isExpanded));
+                });
+            }
+
+            // Modal Logic
             const modal = document.getElementById('imageModal');
-            const modalImg = document.getElementById('modalImage');
-            const closeBtn = document.querySelector('.modal-close');
+            const modalImg = document.getElementById("img01");
+            const closeBtn = document.getElementsByClassName("modal-close")[0];
             const productImages = document.querySelectorAll('.product-image');
 
             productImages.forEach(img => {
                 img.addEventListener('click', function () {
-                    modal.style.display = 'flex';
+                    modal.style.display = "flex";
                     modalImg.src = this.src;
                 });
             });
 
-            closeBtn.addEventListener('click', function () {
-                modal.style.display = 'none';
-            });
+            closeBtn.onclick = function () {
+                modal.style.display = "none";
+            }
 
-            modal.addEventListener('click', function (e) {
+            modal.onclick = function (e) {
                 if (e.target === modal) {
-                    modal.style.display = 'none';
+                    modal.style.display = "none";
                 }
-            });
-
-            // Close on Escape key
-            document.addEventListener('keydown', function (e) {
-                if (e.key === 'Escape' && modal.style.display === 'flex') {
-                    modal.style.display = 'none';
-                }
-            });
+            }
         });
     </script>
 </body>
