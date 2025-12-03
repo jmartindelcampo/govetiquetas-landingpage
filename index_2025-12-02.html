@@ -115,8 +115,8 @@
         .nav-link:after {
             content: '';
             position: absolute;
-            top: -2px;
-            left: -4px;
+            top: 2px;
+            left: 0;
             width: 100%;
             height: 100%;
             background-color: white;
@@ -611,7 +611,6 @@
             font-weight: 500;
             margin-bottom: 20px;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-            text-align: center;
         }
 
         .hero-content p {
@@ -627,7 +626,6 @@
             flex-wrap: wrap;
             margin-top: 30px;
             box-shadow: unset;
-            justify-content: center;
         }
 
         .hero-content .btn-custom {
@@ -1147,269 +1145,6 @@
 
             }
         }
-
-        /* ========== PRODUCT CATEGORIES GRID ========== */
-        .product-categories-grid {
-            display: grid;
-            /*grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));*/
-            grid-template-columns: repeat(3, 2fr);
-
-            gap: 30px;
-            padding: 20px 0;
-        }
-
-        .product-category-card {
-            background: white;
-            border-radius: 20px;
-            padding: 35px 30px;
-            box-shadow: 0 10px 30px rgba(10, 38, 71, 0.1);
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            border: 2px solid transparent;
-        }
-
-        .product-category-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, var(--primary-navy), var(--secondary-blue), var(--primary-silver));
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s ease;
-        }
-
-        .product-category-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .product-category-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(10, 38, 71, 0.2);
-            border-color: var(--primary-navy);
-        }
-
-        .category-icon-wrapper {
-            width: 80px;
-            height: 80px;
-            border-radius: 20px;
-            background: linear-gradient(135deg, var(--primary-navy), var(--secondary-blue));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 25px;
-            transition: all 0.4s ease;
-            box-shadow: 0 8px 20px rgba(10, 38, 71, 0.2);
-        }
-
-        .product-category-card:hover .category-icon-wrapper {
-            transform: scale(1.1) rotate(5deg);
-            background: linear-gradient(135deg, var(--secondary-blue), var(--primary-silver));
-        }
-
-        .category-icon-wrapper i {
-            font-size: 36px;
-            color: white;
-        }
-
-        .category-title {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--primary-navy);
-            margin-bottom: 10px;
-            letter-spacing: 0.5px;
-        }
-
-        .category-subtitle {
-            font-size: 16px;
-            font-weight: 600;
-            color: var(--secondary-blue);
-            margin-bottom: 15px;
-        }
-
-        .category-description {
-            font-size: 15px;
-            color: #666;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            flex-grow: 1;
-        }
-
-        .category-features {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 25px;
-        }
-
-        .feature-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 6px 14px;
-            background: linear-gradient(135deg, #f0f7ff, #e6f2ff);
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--secondary-blue);
-            border: 1px solid rgba(32, 82, 149, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .product-category-card:hover .feature-badge {
-            background: linear-gradient(135deg, var(--secondary-blue), var(--primary-navy));
-            color: white;
-            border-color: transparent;
-        }
-
-        .feature-badge i {
-            font-size: 12px;
-            color: #25D366;
-        }
-
-        .product-category-card:hover .feature-badge i {
-            color: white;
-        }
-
-        .category-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 14px 28px;
-            background: linear-gradient(135deg, var(--primary-navy), var(--secondary-blue));
-            color: white;
-            text-decoration: none;
-            border-radius: 10px;
-            font-weight: 600;
-            font-size: 15px;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(10, 38, 71, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .category-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .category-btn:hover::before {
-            left: 100%;
-        }
-
-        .category-btn:hover {
-            transform: translateX(5px);
-            box-shadow: 0 8px 25px rgba(10, 38, 71, 0.3);
-            color: white;
-        }
-
-        .category-btn i {
-            transition: transform 0.3s ease;
-        }
-
-        .category-btn:hover i {
-            transform: translateX(5px);
-        }
-
-        @media (max-width: 1024px) {
-            .product-categories-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 25px;
-            }
-        }
-
-        /* Responsive para grid de categorías */
-        @media (max-width: 768px) {
-            .product-categories-grid {
-                grid-template-columns: repeat(1, 1fr);
-                gap: 25px;
-            }
-
-            .product-category-card {
-                padding: 30px 25px;
-            }
-
-            .category-icon-wrapper {
-                width: 70px;
-                height: 70px;
-            }
-
-            .category-icon-wrapper i {
-                font-size: 32px;
-            }
-
-            .category-title {
-                font-size: 22px;
-            }
-        }
-
-        @media (max-width: 500px) {
-            .product-category-card {
-                padding: 25px 20px;
-            }
-
-            .category-title {
-                font-size: 20px;
-            }
-
-            .category-subtitle {
-                font-size: 15px;
-            }
-
-            .category-description {
-                font-size: 14px;
-            }
-        }
-
-        @media (max-width: 991.98px) {
-            .navbar-collapse {
-                background-color: rgba(10, 38, 71, 0.98);
-                padding: 20px;
-                max-height: 80vh;
-                overflow-y: auto;
-            }
-
-            .dropdown-menu {
-                position: static !important;
-                float: none;
-                width: auto;
-                background-color: transparent;
-                border: none;
-                box-shadow: none;
-                padding-left: 20px;
-                margin-top: 0;
-                transform: none !important;
-                /* Evita que MDB use transform para posicionar */
-            }
-
-            .dropdown-item {
-                color: rgba(255, 255, 255, 0.8) !important;
-                padding: 8px 15px;
-            }
-
-            .dropdown-item:hover,
-            .dropdown-item:focus {
-                background-color: rgba(255, 255, 255, 0.1);
-                color: white !important;
-            }
-
-            .nav-link {
-                color: white !important;
-                padding: 10px 0 !important;
-            }
-        }
     </style>
 </head>
 
@@ -1439,7 +1174,7 @@
                             <a class="nav-link" href="#servicios">Servicios</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            <a class="nav-link dropdown" href="#" id="navbarDropdown" role="button"
                                 data-mdb-toggle="dropdown" aria-expanded="false">
                                 Productos
                             </a>
@@ -1460,8 +1195,6 @@
                                         href="./product_categories/despachadores-cintas.html">Despachadores de
                                         Cintas</a>
                                 </li>
-                                <li><a class="dropdown-item"
-                                        href="./product_categories/suajes-personalizados.html">Suajes</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
@@ -1483,7 +1216,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="https://wa.me/523314179249" target="_blank" aria-label="WhatsApp">
+                            <a href="https://wa.me/523331234567" target="_blank" aria-label="WhatsApp">
                                 <i class="fab fa-whatsapp icon"></i>
                             </a>
                         </li>
@@ -1493,7 +1226,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="tel:+523333309583" target="_blank" aria-label="Phone">
+                            <a href="tel:+523331234567" target="_blank" aria-label="Phone">
                                 <i class="fas fa-phone icon"></i>
                             </a>
                         </li>
@@ -1525,7 +1258,7 @@
                         <a href="#productos" class="btn-custom btn-primary-custom">
                             <i class="fas fa-tags"></i> Ver Catálogo
                         </a>
-                        <a href="https://wa.me/523314179249" target="_blank" class="btn-custom btn-secondary-custom">
+                        <a href="https://wa.me/523331234567" target="_blank" class="btn-custom btn-secondary-custom">
                             <i class="fab fa-whatsapp"></i> Cotizar Ahora
                         </a>
                     </div>
@@ -1705,179 +1438,206 @@
 
         <!-- Products Section with New Design -->
         <div class="responsive-container-block bigContainer">
-            <section id="productos"
-                style="padding: 80px 0; background: linear-gradient(180deg, #f7f3ef 0%, #e8e4e0 100%);">
-                <div class="container">
-                    <!-- Header -->
-                    <div class="text-center mb-5">
-                        <p class="text-blk headingText">Nuestras Categorías de Productos</p>
-                        <h2 class="text-blk subHeadingText"
-                            style="color: var(--primary-navy); max-width: 800px; margin: 0 auto;">
-                            Catálogo completo de soluciones en etiquetado e impresión
-                        </h2>
+            <section id="productos">
+                <!-- Header -->
+                <div class="text-center mb-3">
+                    <p class="text-blk headingText">Nuestras Categorías de Productos</p>
+                    <h2 class="text-blk subHeadingText"
+                        style="color: var(--primary-navy); max-width: 800px; margin: 0 auto;">
+                        Catálogo completo de soluciones en etiquetado e impresión
+                    </h2>
+                </div>
+
+                <!-- Producto 1: ROLLOS DE TICKTES -->
+                <div class="responsive-container-block Container">
+                    <div class="allText aboveText">
+                        <p class="text-blk headingText">ROLLOS DE TICKTES</p>
+                        <p class="text-blk subHeadingText">Rollos térmicos y bond de alta calidad</p>
+                        <p class="text-blk description">
+                            Rollos de tickets para punto de venta, impresoras térmicas y más. Disponibles en diversas
+                            medidas y materiales para asegurar la mejor impresión.
+                        </p>
+                        <a href="./product_categories/rollos-tickets.html" class="explore">Conocer los productos</a>
                     </div>
-
-                    <!-- Grid de Categorías -->
-                    <div class="product-categories-grid">
-                        <!-- Categoría 1: ROLLOS DE TICKETS -->
-                        <div class="product-category-card">
-                            <div class="category-icon-wrapper">
-                                <i class="fas fa-receipt"></i>
-                            </div>
-                            <h3 class="category-title">Rollos de Tickets</h3>
-                            <p class="category-subtitle">Rollos térmicos y bond de alta calidad</p>
-                            <p class="category-description">
-                                Rollos de tickets para punto de venta, impresoras térmicas y más. Disponibles en
-                                diversas medidas y materiales.
+                    <div class="ultimateImg">
+                        <img class="mainImg" src="./img/recursos/80X70 TERMICO.png" alt="ROLLOS DE TICKTES">
+                        <div class="purpleBox">
+                            <p class="purpleText">
+                                Papel térmico de alta sensibilidad y durabilidad.
                             </p>
-                            <div class="category-features">
-                                <span class="feature-badge"><i class="fas fa-check-circle"></i> Calidad Premium</span>
-                                <span class="feature-badge"><i class="fas fa-check-circle"></i> Alta Sensibilidad</span>
+                            <div style="display: flex; gap: 5px; margin-top: 10px; align-items: center;">
+                                <i class="fas fa-check-circle" style="color: #25D366; font-size: 18px;"></i>
+                                <span class="text-white" style="font-size: 14px;">Calidad Premium</span>
                             </div>
-                            <a href="./product_categories/rollos-tickets.html" class="category-btn">
-                                Ver Productos <i class="fas fa-arrow-right"></i>
-                            </a>
                         </div>
+                    </div>
+                </div>
 
-                        <!-- Categoría 2: RIBBONS -->
-                        <div class="product-category-card">
-                            <div class="category-icon-wrapper">
-                                <i class="fas fa-print"></i>
-                            </div>
-                            <h3 class="category-title">Ribbons</h3>
-                            <p class="category-subtitle">Cera, Resina y Cera-Resina</p>
-                            <p class="category-description">
-                                Amplia variedad de ribbons para impresoras de transferencia térmica. Ideales para
-                                etiquetas de papel, sintéticas y textiles.
+                <!-- Producto 2: RIBONS -->
+                <div class="responsive-container-block Container bottomContainer">
+                    <div class="ultimateImg">
+                        <img class="mainImg" src="./img/recursos/RIBBONS CERA VARIOS.jpg" alt="RIBONS">
+                        <div class="purpleBox"
+                            style="background: linear-gradient(135deg, var(--secondary-blue), #4a9ff5);">
+                            <p class="purpleText">
+                                Cintas de transferencia térmica para impresoras de etiquetas.
                             </p>
-                            <div class="category-features">
-                                <span class="feature-badge"><i class="fas fa-check-circle"></i> Transferencia
-                                    Térmica</span>
-                                <span class="feature-badge"><i class="fas fa-check-circle"></i> Múltiples Tipos</span>
+                            <div style="display: flex; gap: 8px; margin-top: 10px;">
+                                <i class="fas fa-print" style="color: #fff; font-size: 24px;"></i>
+                                <i class="fas fa-scroll" style="color: #fff; font-size: 24px;"></i>
                             </div>
-                            <a href="./product_categories/ribbons.html" class="category-btn">
-                                Ver Productos <i class="fas fa-arrow-right"></i>
-                            </a>
                         </div>
+                    </div>
+                    <div class="allText bottomText">
+                        <p class="text-blk headingText">RIBONS</p>
+                        <p class="text-blk subHeadingText">Cera, Resina y Cera-Resina</p>
+                        <p class="text-blk description">
+                            Amplia variedad de ribbons para impresoras de transferencia térmica. Ideales para etiquetas
+                            de papel, sintéticas y textiles.
+                        </p>
+                        <a href="./product_categories/ribbons.html" class="explore">Conocer los productos</a>
+                    </div>
+                </div>
 
-                        <!-- Categoría 3: PLASTIFECHAS -->
-                        <div class="product-category-card">
-                            <div class="category-icon-wrapper">
-                                <i class="fas fa-tag"></i>
-                            </div>
-                            <h3 class="category-title">Plastifechas</h3>
-                            <p class="category-subtitle">Sujetadores plásticos para etiquetado</p>
-                            <p class="category-description">
-                                Plastifechas estándar y finas para etiquetado de ropa, textiles y otros productos.
-                                Soluciones prácticas y resistentes.
+                <!-- Producto 3: PLASTIFECHAS -->
+                <div class="responsive-container-block Container">
+                    <div class="allText aboveText">
+                        <p class="text-blk headingText">PLASTIFECHAS</p>
+                        <p class="text-blk subHeadingText">Sujetadores plásticos para etiquetado</p>
+                        <p class="text-blk description">
+                            Plastifechas estándar y finas para etiquetado de ropa, textiles y otros productos.
+                            Soluciones prácticas y resistentes.
+                        </p>
+                        <a href="./product_categories/maquinas-plastiflecha.html" class="explore">Conocer los
+                            productos</a>
+                    </div>
+                    <div class="ultimateImg">
+                        <img class="mainImg" src="./img/recursos/PLASTIFLECHA STANDAR 25MM.jpg" alt="PLASTIFECHAS">
+                        <div class="purpleBox"
+                            style="background: linear-gradient(135deg, var(--primary-navy), var(--primary-silver));">
+                            <p class="purpleText">
+                                Disponibles en diferentes medidas y colores.
                             </p>
-                            <div class="category-features">
-                                <span class="feature-badge"><i class="fas fa-check-circle"></i> Varias Medidas</span>
-                                <span class="feature-badge"><i class="fas fa-check-circle"></i> Resistentes</span>
+                            <div style="display: flex; gap: 8px; margin-top: 10px;">
+                                <i class="fas fa-tag" style="color: #fff; font-size: 18px;"></i>
+                                <i class="fas fa-tshirt" style="color: #fff; font-size: 18px;"></i>
                             </div>
-                            <a href="./product_categories/maquinas-plastiflecha.html" class="category-btn">
-                                Ver Productos <i class="fas fa-arrow-right"></i>
-                            </a>
                         </div>
+                    </div>
+                </div>
 
-                        <!-- Categoría 4: IMPRESORAS INDUSTRIALES -->
-                        <div class="product-category-card">
-                            <div class="category-icon-wrapper">
-                                <i class="fas fa-industry"></i>
-                            </div>
-                            <h3 class="category-title">Impresoras Industriales</h3>
-                            <p class="category-subtitle">Tecnología de punta en impresión</p>
-                            <p class="category-description">
-                                Impresoras industriales de códigos de barras y etiquetas. Marcas líderes como Zebra,
-                                Honeywell y más.
+                <!-- Producto 4: IMPRESORAS INDUSTRIALES -->
+                <div class="responsive-container-block Container bottomContainer">
+                    <div class="ultimateImg">
+                        <img class="mainImg" src="./img/recursos/ZEBRA.png" alt="IMPRESORAS INDUSTRIALES">
+                        <div class="purpleBox"
+                            style="background: linear-gradient(135deg, var(--primary-navy), var(--secondary-blue));">
+                            <p class="purpleText">
+                                Equipos robustos para alto volumen de impresión.
                             </p>
-                            <div class="category-features">
-                                <span class="feature-badge"><i class="fas fa-check-circle"></i> Alto Rendimiento</span>
-                                <span class="feature-badge"><i class="fas fa-check-circle"></i> Marcas Líderes</span>
+                            <div style="display: flex; gap: 5px; margin-top: 10px; align-items: center;">
+                                <i class="fas fa-industry" style="font-size: 20px;"></i>
+                                <span class="text-white" style="font-size: 14px;">Alto Rendimiento</span>
                             </div>
-                            <a href="./product_categories/impresoras-industriales.html" class="category-btn">
-                                Ver Productos <i class="fas fa-arrow-right"></i>
-                            </a>
                         </div>
+                    </div>
+                    <div class="allText bottomText">
+                        <p class="text-blk headingText">IMPRESORAS INDUSTRIALES</p>
+                        <p class="text-blk subHeadingText">Tecnología de punta en impresión</p>
+                        <p class="text-blk description">
+                            Impresoras industriales de códigos de barras y etiquetas. Marcas líderes como Zebra,
+                            Honeywell y más.
+                        </p>
+                        <a href="./product_categories/impresoras-industriales.html" class="explore">Conocer los
+                            productos</a>
+                    </div>
+                </div>
 
-                        <!-- Categoría 5: ETIQUETAS -->
-                        <div class="product-category-card">
-                            <div class="category-icon-wrapper">
-                                <i class="fas fa-tags"></i>
-                            </div>
-                            <h3 class="category-title">Etiquetas</h3>
-                            <p class="category-subtitle">Soluciones especializadas en etiquetado</p>
-                            <p class="category-description">
-                                Etiquetas textiles, etiquetadoras manuales y etiquetas Brother. Variedad de materiales y
-                                adhesivos para cada necesidad.
-                            </p>
-                            <div class="category-features">
-                                <span class="feature-badge"><i class="fas fa-check-circle"></i> Múltiples Tipos</span>
-                                <span class="feature-badge"><i class="fas fa-check-circle"></i> Personalizables</span>
-                            </div>
-                            <a href="./product_categories/etiquetas-especiales.html" class="category-btn">
-                                Ver Productos <i class="fas fa-arrow-right"></i>
-                            </a>
+                <!-- Producto 5: ETIQUETAS -->
+                <div class="responsive-container-block Container">
+                    <div class="allText aboveText">
+                        <p class="text-blk headingText">ETIQUETAS</p>
+                        <p class="text-blk subHeadingText">Soluciones especializadas en etiquetado</p>
+                        <div class="text-blk description">
+                            <ul style="list-style-type: none; padding: 0;">
+                                <li style="margin-bottom: 10px;"><i class="fas fa-check"
+                                        style="color: var(--accent-orange); margin-right: 10px;"></i><strong>ETIQUETAS
+                                        TEXTILES:</strong> Para ropa y productos textiles.</li>
+                                <li style="margin-bottom: 10px;"><i class="fas fa-check"
+                                        style="color: var(--accent-orange); margin-right: 10px;"></i><strong>ETIQUETADORAS
+                                        MANUALES:</strong> Máquinas prácticas y portátiles.</li>
+                                <li><i class="fas fa-check"
+                                        style="color: var(--accent-orange); margin-right: 10px;"></i><strong>ETIQUETA
+                                        BROTHER:</strong> Compatibles con impresoras Brother.</li>
+                            </ul>
                         </div>
-
-                        <!-- Categoría 6: CINTAS ADHESIVAS -->
-                        <div class="product-category-card">
-                            <div class="category-icon-wrapper">
-                                <i class="fas fa-tape"></i>
-                            </div>
-                            <h3 class="category-title">Cintas Adhesivas</h3>
-                            <p class="category-subtitle">Empaque y sellado confiable</p>
-                            <p class="category-description">
-                                Cintas adhesivas tipo canela y transparente. Ideales para cerrar cajas y paquetes con
-                                seguridad y alta resistencia.
+                        <a href="./product_categories/etiquetas-especiales.html" class="explore">Conocer los
+                            productos</a>
+                    </div>
+                    <div class="ultimateImg">
+                        <img class="mainImg" src="./img/recursos/ETIQUETA BROTHER.png" alt="ETIQUETAS">
+                        <div class="purpleBox"
+                            style="background: linear-gradient(135deg, #4a9ff5, var(--secondary-blue));">
+                            <p class="purpleText">
+                                Variedad de materiales y adhesivos para cada necesidad.
                             </p>
-                            <div class="category-features">
-                                <span class="feature-badge"><i class="fas fa-check-circle"></i> Alta Resistencia</span>
-                                <span class="feature-badge"><i class="fas fa-check-circle"></i> Varios Tipos</span>
+                            <div style="display: flex; gap: 8px; margin-top: 10px;">
+                                <i class="fas fa-tags" style="color: var(--primary-navy); font-size: 18px;"></i>
+                                <i class="fas fa-cut" style="color: var(--primary-navy); font-size: 18px;"></i>
                             </div>
-                            <a href="./product_categories/cintas-adhesivas.html" class="category-btn">
-                                Ver Productos <i class="fas fa-arrow-right"></i>
-                            </a>
                         </div>
+                    </div>
+                </div>
 
-                        <!-- Categoría 7: DESPACHADORES DE CINTAS -->
-                        <div class="product-category-card">
-                            <div class="category-icon-wrapper">
-                                <i class="fas fa-hand-holding"></i>
-                            </div>
-                            <h3 class="category-title">Despachadores de Cintas</h3>
-                            <p class="category-subtitle">Herramientas para facilitar el empaque</p>
-                            <p class="category-description">
-                                Despachadores de cinta manuales y de uso rudo. Agiliza tus procesos de empaque con
-                                herramientas duraderas y ergonómicas.
+                <!-- Producto 6: CINTAS ADHESIVAS -->
+                <div class="responsive-container-block Container bottomContainer">
+                    <div class="ultimateImg">
+                        <img class="mainImg" src="./img/recursos/CINTA CANELA 48X150.png" alt="CINTAS ADHESIVAS">
+                        <div class="purpleBox"
+                            style="background: linear-gradient(135deg, var(--primary-navy), var(--primary-navy));">
+                            <p class="purpleText">
+                                Adhesivo de alta resistencia para empaque seguro.
                             </p>
-                            <div class="category-features">
-                                <span class="feature-badge"><i class="fas fa-check-circle"></i> Diseño Ergonómico</span>
-                                <span class="feature-badge"><i class="fas fa-check-circle"></i> Uso Rudo</span>
+                            <div style="display: flex; gap: 8px; margin-top: 10px;">
+                                <i class="fas fa-box-open" style="color: #fff; font-size: 20px;"></i>
+                                <i class="fas fa-tape" style="color: #fff; font-size: 20px;"></i>
                             </div>
-                            <a href="./product_categories/despachadores-cintas.html" class="category-btn">
-                                Ver Productos <i class="fas fa-arrow-right"></i>
-                            </a>
                         </div>
+                    </div>
+                    <div class="allText bottomText">
+                        <p class="text-blk headingText">CINTAS ADHESIVAS</p>
+                        <p class="text-blk subHeadingText">Empaque y sellado confiable</p>
+                        <p class="text-blk description">
+                            Cintas adhesivas tipo canela y transparente. Ideales para cerrar cajas y paquetes con
+                            seguridad.
+                        </p>
+                        <a href="./product_categories/cintas-adhesivas.html" class="explore">Conocer los productos</a>
+                    </div>
+                </div>
 
-                        <!-- Categoría 8: SUAJES -->
-                        <div class="product-category-card">
-                            <div class="category-icon-wrapper">
-                                <i class="fas fa-cut"></i>
-                            </div>
-                            <h3 class="category-title">Suajes</h3>
-                            <p class="category-subtitle">Troqueles personalizados para etiquetas</p>
-                            <p class="category-description">
-                                Suajes personalizados y estándar para corte de etiquetas. Fabricación de troqueles de
-                                alta precisión para cualquier forma y tamaño.
+                <!-- Producto 7: DESPACHADORES DE CINTAS -->
+                <div class="responsive-container-block Container">
+                    <div class="allText aboveText">
+                        <p class="text-blk headingText">DESPACHADORES DE CINTAS</p>
+                        <p class="text-blk subHeadingText">Herramientas para facilitar el empaque</p>
+                        <p class="text-blk description">
+                            Despachadores de cinta manuales y de uso rudo. Agiliza tus procesos de empaque con
+                            herramientas duraderas y ergonómicas.
+                        </p>
+                        <a href="./product_categories/cintas-adhesivas.html" class="explore">Conocer los productos</a>
+                    </div>
+                    <div class="ultimateImg">
+                        <img class="mainImg" src="./img/recursos/DESPACHADOR DE CINTA RUDO.jpg"
+                            alt="DESPACHADORES DE CINTAS">
+                        <div class="purpleBox"
+                            style="background: linear-gradient(45deg, var(--accent-orange), #ff8555);">
+                            <p class="purpleText">
+                                Diseño ergonómico para uso continuo.
                             </p>
-                            <div class="category-features">
-                                <span class="feature-badge"><i class="fas fa-check-circle"></i> Personalizables</span>
-                                <span class="feature-badge"><i class="fas fa-check-circle"></i> Alta Precisión</span>
+                            <div style="display: flex; gap: 8px; margin-top: 10px;">
+                                <i class="fas fa-hand-holding" style="color: #fff; font-size: 18px;"></i>
+                                <i class="fas fa-cog" style="color: #fff; font-size: 18px;"></i>
                             </div>
-                            <a href="./product_categories/suajes-personalizados.html" class="category-btn">
-                                Ver Productos <i class="fas fa-arrow-right"></i>
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -1989,7 +1749,8 @@
                             <div class="card-body py-4">
                                 <i class="fas fa-phone fa-3x mb-3" style="color: var(--primary-silver);"></i>
                                 <h5 class="fw-bold mb-3 text-white">Teléfono</h5>
-                                <p class="mb-1"><a href="tel:+523333309583" class="text-white">(33) 3330-9583</a></p>
+                                <p class="mb-1"><a href="tel:+523331234567" class="text-white">(33) 3123-4567</a></p>
+                                <p><a href="tel:+523331234568" class="text-white">(33) 3123-4568</a></p>
                             </div>
                         </div>
                     </div>
@@ -2001,7 +1762,7 @@
                             <div class="card-body py-4">
                                 <i class="fab fa-whatsapp fa-3x mb-3" style="color: #25D366;"></i>
                                 <h5 class="fw-bold mb-3 text-white">WhatsApp</h5>
-                                <p><a href="https://wa.me/523314179249" class="text-white" target="_blank">Enviar
+                                <p><a href="https://wa.me/523331234567" class="text-white" target="_blank">Enviar
                                         mensaje</a></p>
                                 <p class="text-white-50 small">Respuesta inmediata</p>
                             </div>
@@ -2065,7 +1826,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="https://wa.me/523314179249" target="_blank" aria-label="WhatsApp">
+                                <a href="https://wa.me/523331234567" target="_blank" aria-label="WhatsApp">
                                     <i class="fab fa-whatsapp icon"></i>
                                 </a>
                             </li>
@@ -2075,7 +1836,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="tel:+523333309583" target="_blank" aria-label="Phone">
+                                <a href="tel:+523331234567" target="_blank" aria-label="Phone">
                                     <i class="fas fa-phone icon"></i>
                                 </a>
                             </li>
@@ -2123,13 +1884,13 @@
                         <li class="mb-3">
                             <span class="fa-li"><i class="fas fa-phone"></i></span>
                             <span class="ms-2">
-                                <a href="tel:+523333309583" class="text-white">(33) 3330-9583</a>
+                                <a href="tel:+523331234567" class="text-white">(33) 3123-4567</a>
                             </span>
                         </li>
                         <li class="mb-3">
                             <span class="fa-li"><i class="fab fa-whatsapp"></i></span>
                             <span class="ms-2">
-                                <a href="https://wa.me/523314179249" class="text-white" target="_blank">WhatsApp -
+                                <a href="https://wa.me/523331234567" class="text-white" target="_blank">WhatsApp -
                                     Respuesta inmediata</a>
                             </span>
                         </li>
@@ -2151,7 +1912,7 @@
     </footer>
 
     <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/523314179249" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
+    <a href="https://wa.me/523331234567" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 

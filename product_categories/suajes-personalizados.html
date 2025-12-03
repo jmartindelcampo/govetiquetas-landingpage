@@ -482,6 +482,79 @@
                 opacity: 1
             }
         }
+
+        /* Tabs Styling */
+        .nav-tabs {
+            border-bottom: 2px solid var(--primary-silver);
+            margin-bottom: 30px;
+            /*gap: 10px;*/
+            background-color: #205295;
+        }
+
+        .nav-tabs .nav-item {
+            margin-bottom: -2px;
+        }
+
+        .nav-tabs .nav-link {
+            border: none;
+            border-bottom: 3px solid transparent;
+            color: #666;
+            font-weight: 600;
+            padding: 15px 25px;
+            transition: all 0.3s ease;
+            background: transparent;
+        }
+
+        .nav-tabs .nav-link:hover {
+            color: var(--secondary-blue);
+            background: rgba(32, 82, 149, 0.05);
+        }
+
+        .nav-tabs .nav-link.active {
+            color: var(--primary-navy);
+            border-bottom: 3px solid var(--secondary-blue);
+            background: transparent;
+        }
+
+        /* Measures Grid */
+        .measures-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 15px;
+        }
+
+        .measure-card {
+            background: white;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 60px;
+        }
+
+        .measure-card:hover {
+            border-color: var(--secondary-blue);
+            box-shadow: 0 5px 15px rgba(32, 82, 149, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .measure-text {
+            font-weight: 500;
+            color: var(--primary-navy);
+            font-size: 0.95rem;
+        }
+
+        .category-icon {
+            font-size: 2rem;
+            color: var(--secondary-blue);
+            margin-bottom: 15px;
+            display: block;
+            text-align: center;
+        }
     </style>
 </head>
 
@@ -532,6 +605,7 @@
                                         href="../product_categories/despachadores-cintas.html">Despachadores de
                                         Cintas</a>
                                 </li>
+                                <li><a class="dropdown-item" href="../product_categories/suajes.html">Suajes</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
@@ -553,7 +627,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="https://wa.me/523331234567" target="_blank" aria-label="WhatsApp">
+                            <a href="https://wa.me/523314179249" target="_blank" aria-label="WhatsApp">
                                 <i class="fab fa-whatsapp icon"></i>
                             </a>
                         </li>
@@ -563,7 +637,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="tel:+523331234567" target="_blank" aria-label="Phone">
+                            <a href="tel:+523333309583" target="_blank" aria-label="Phone">
                                 <i class="fas fa-phone icon"></i>
                             </a>
                         </li>
@@ -592,328 +666,418 @@
         <div class="container my-5">
             <!-- Category Info -->
             <div class="category-info">
-                <h3><i class="fas fa-info-circle me-2"></i>Sobre nuestros suajes</h3>
+                <h3><i class="fas fa-info-circle me-2"></i>Catálogo de Medidas Disponibles</h3>
                 <p>
-                    Fabricamos suajes personalizados para etiquetas con formas únicas que se adaptan perfectamente a tus
-                    productos. Contamos con una amplia variedad de medidas estándar y también fabricamos suajes según
-                    tus
-                    especificaciones exactas. Nuestros suajes garantizan cortes precisos, limpios y consistentes para
-                    una
-                    presentación profesional de tus etiquetas.
+                    Contamos con una amplia variedad de suajes en stock listos para producción. Selecciona la forma
+                    deseada para ver las medidas disponibles. Si no encuentras la medida que buscas, podemos fabricar un
+                    suaje personalizado según tus necesidades.
                 </p>
             </div>
 
-            <div class="row">
-                <!-- Products Grid -->
-                <div class="col-12">
-                    <div class="d-flex justify-content-between align-items-center mb-4">
-                        <h5 class="text-primary mb-0">
-                            <i class="fas fa-box me-2"></i>Catálogo de Suajes
-                        </h5>
+            <!-- Tabs Navigation -->
+            <ul class="nav nav-tabs" id="suajesTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="rectangulo-tab" data-mdb-toggle="tab"
+                        data-mdb-target="#rectangulo" type="button" role="tab" aria-controls="rectangulo"
+                        aria-selected="true">
+                        <i class="far fa-square me-2"></i>Rectángulo
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="circulo-tab" data-mdb-toggle="tab" data-mdb-target="#circulo"
+                        type="button" role="tab" aria-controls="circulo" aria-selected="false">
+                        <i class="far fa-circle me-2"></i>Círculo
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="ovalo-tab" data-mdb-toggle="tab" data-mdb-target="#ovalo" type="button"
+                        role="tab" aria-controls="ovalo" aria-selected="false">
+                        <i class="fas fa-egg me-2"></i>Óvalo
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="cartulina-tab" data-mdb-toggle="tab" data-mdb-target="#cartulina"
+                        type="button" role="tab" aria-controls="cartulina" aria-selected="false">
+                        <i class="fas fa-scroll me-2"></i>Cartulina
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="nylon-tab" data-mdb-toggle="tab" data-mdb-target="#nylon" type="button"
+                        role="tab" aria-controls="nylon" aria-selected="false">
+                        <i class="fas fa-tag me-2"></i>Nylon
+                    </button>
+                </li>
+            </ul>
+
+            <!-- Tabs Content -->
+            <div class="tab-content" id="suajesTabsContent">
+                <!-- Rectángulo -->
+                <div class="tab-pane fade show active" id="rectangulo" role="tabpanel" aria-labelledby="rectangulo-tab">
+                    <div class="text-center mb-4">
+                        <i class="far fa-square category-icon"></i>
+                        <h4 class="text-primary">Medidas Rectangulares</h4>
                     </div>
+                    <div class="measures-grid">
+                        <!-- Grupo 10mm -->
+                        <div class="measure-card"><span class="measure-text">20 x 10 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">25 x 10 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">30 x 10 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">32 x 10 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">38 x 10 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">45 x 10 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">50 x 10 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">51 x 10 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">60 x 10 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">64 x 10 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">70 x 10 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">76 x 10 mm</span></div>
 
-                    <div class="row g-4">
-                        <!-- Product 1 -->
-                        <div class="col-md-6 col-lg-4">
-                            <div class="product-card">
-                                <div style="position: relative;">
-                                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&q=80"
-                                        alt="Suaje 10x5cm" class="product-image">
-                                </div>
-                                <div class="product-content">
-                                    <h5 class="product-title">Suaje 10 x 5 cm</h5>
-                                    <ul class="product-specs">
-                                        <li><i class="fas fa-ruler"></i>10 x 5 cm</li>
-                                        <li><i class="fas fa-check-circle"></i>Ideal para etiquetas de productos</li>
-                                        <li><i class="fas fa-check-circle"></i>Corte preciso y limpio</li>
-                                        <li><i class="fas fa-check-circle"></i>Compatible con impresión térmica</li>
-                                    </ul>
-                                    <div class="product-footer">
-                                        <a href="https://wa.me/523331234567?text=Quiero%20cotizar%20Suaje%2010x5cm"
-                                            target="_blank" class="btn-quote">
-                                            <i class="fab fa-whatsapp me-2"></i>Cotizar
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- Grupo 5mm -->
+                        <div class="measure-card"><span class="measure-text">19 x 5 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">25 x 5 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">30 x 5 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">31 x 5 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">38 x 5 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">40 x 5 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">50 x 5 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">55 x 5 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">60 x 5 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">65 x 5 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">70 x 5 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">80 x 5 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">90 x 5 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">100 x 5 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">102 x 5 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">105 x 5 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">110 x 5 mm</span></div>
 
-                        <!-- Product 2 -->
-                        <div class="col-md-6 col-lg-4">
-                            <div class="product-card">
-                                <div style="position: relative;">
-                                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&q=80"
-                                        alt="Suaje 7.5x5cm" class="product-image">
-                                </div>
-                                <div class="product-content">
-                                    <h5 class="product-title">Suaje 7.5 x 5 cm</h5>
-                                    <ul class="product-specs">
-                                        <li><i class="fas fa-ruler"></i>7.5 x 5 cm</li>
-                                        <li><i class="fas fa-check-circle"></i>Tamaño compacto y versátil</li>
-                                        <li><i class="fas fa-check-circle"></i>Perfecto para envíos</li>
-                                        <li><i class="fas fa-check-circle"></i>Alta durabilidad</li>
-                                    </ul>
-                                    <div class="product-footer">
-                                        <a href="https://wa.me/523331234567?text=Quiero%20cotizar%20Suaje%207.5x5cm"
-                                            target="_blank" class="btn-quote">
-                                            <i class="fab fa-whatsapp me-2"></i>Cotizar
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- Grupo 7mm -->
+                        <div class="measure-card"><span class="measure-text">13 x 7 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">19 x 7 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">22 x 7 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">25 x 7 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">32 x 7 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">38 x 7 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">50 x 7 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">63 x 7 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">70 x 7 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">76 x 7 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">102 x 7 mm</span></div>
 
-                        <!-- Product 3 -->
-                        <div class="col-md-6 col-lg-4">
-                            <div class="product-card">
-                                <div style="position: relative;">
-                                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&q=80"
-                                        alt="Suaje 10x7.5cm" class="product-image">
-                                </div>
-                                <div class="product-content">
-                                    <h5 class="product-title">Suaje 10 x 7.5 cm</h5>
-                                    <ul class="product-specs">
-                                        <li><i class="fas fa-ruler"></i>10 x 7.5 cm</li>
-                                        <li><i class="fas fa-check-circle"></i>Tamaño mediano estándar</li>
-                                        <li><i class="fas fa-check-circle"></i>Ideal para inventario</li>
-                                        <li><i class="fas fa-check-circle"></i>Excelente visibilidad</li>
-                                    </ul>
-                                    <div class="product-footer">
-                                        <a href="https://wa.me/523331234567?text=Quiero%20cotizar%20Suaje%2010x7.5cm"
-                                            target="_blank" class="btn-quote">
-                                            <i class="fab fa-whatsapp me-2"></i>Cotizar
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- Grupo 9mm -->
+                        <div class="measure-card"><span class="measure-text">13 x 9 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">25 x 9 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">32 x 9 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">35 x 9 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">38 x 9 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">40 x 9 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">44 x 9 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">50 x 9 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">57 x 9 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">63 x 9 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">70 x 9 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">76 x 9 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">89 x 9 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">102 x 9 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">105 x 9 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">127 x 9 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">152 x 9 mm</span></div>
 
-                        <!-- Product 4 -->
-                        <div class="col-md-6 col-lg-4">
-                            <div class="product-card">
-                                <div style="position: relative;">
-                                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&q=80"
-                                        alt="Suaje 10x10cm" class="product-image">
-                                </div>
-                                <div class="product-content">
-                                    <h5 class="product-title">Suaje 10 x 10 cm</h5>
-                                    <ul class="product-specs">
-                                        <li><i class="fas fa-ruler"></i>10 x 10 cm</li>
-                                        <li><i class="fas fa-check-circle"></i>Formato cuadrado</li>
-                                        <li><i class="fas fa-check-circle"></i>Máxima área de impresión</li>
-                                        <li><i class="fas fa-check-circle"></i>Versátil para múltiples usos</li>
-                                    </ul>
-                                    <div class="product-footer">
-                                        <a href="https://wa.me/523331234567?text=Quiero%20cotizar%20Suaje%2010x10cm"
-                                            target="_blank" class="btn-quote">
-                                            <i class="fab fa-whatsapp me-2"></i>Cotizar
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- Grupo 11mm -->
+                        <div class="measure-card"><span class="measure-text">19 x 11 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">25 x 11 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">32 x 11 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">38 x 11 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">50 x 11 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">63 x 11 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">70 x 11 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">76 x 11 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">90 x 11 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">102 x 11 mm</span></div>
 
-                        <!-- Product 5 -->
-                        <div class="col-md-6 col-lg-4">
-                            <div class="product-card">
-                                <div style="position: relative;">
-                                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&q=80"
-                                        alt="Suaje 5x2.5cm" class="product-image">
-                                </div>
-                                <div class="product-content">
-                                    <h5 class="product-title">Suaje 5 x 2.5 cm</h5>
-                                    <ul class="product-specs">
-                                        <li><i class="fas fa-ruler"></i>5 x 2.5 cm</li>
-                                        <li><i class="fas fa-check-circle"></i>Tamaño compacto</li>
-                                        <li><i class="fas fa-check-circle"></i>Ideal para códigos de barras</li>
-                                        <li><i class="fas fa-check-circle"></i>Económico y eficiente</li>
-                                    </ul>
-                                    <div class="product-footer">
-                                        <a href="https://wa.me/523331234567?text=Quiero%20cotizar%20Suaje%205x2.5cm"
-                                            target="_blank" class="btn-quote">
-                                            <i class="fab fa-whatsapp me-2"></i>Cotizar
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- Grupo 13mm -->
+                        <div class="measure-card"><span class="measure-text">25 x 13 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">32 x 13 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">38 x 13 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">50 x 13 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">51 x 13 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">60 x 13 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">63 x 13 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">70 x 13 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">76 x 13 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">80 x 13 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">90 x 13 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">100 x 13 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">102 x 13 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">127 x 13 mm</span></div>
 
-                        <!-- Product 6 -->
-                        <div class="col-md-6 col-lg-4">
-                            <div class="product-card">
-                                <div style="position: relative;">
-                                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&q=80"
-                                        alt="Suaje 7.5x2.5cm" class="product-image">
-                                </div>
-                                <div class="product-content">
-                                    <h5 class="product-title">Suaje 7.5 x 2.5 cm</h5>
-                                    <ul class="product-specs">
-                                        <li><i class="fas fa-ruler"></i>7.5 x 2.5 cm</li>
-                                        <li><i class="fas fa-check-circle"></i>Formato alargado</li>
-                                        <li><i class="fas fa-check-circle"></i>Perfecto para etiquetas de precio</li>
-                                        <li><i class="fas fa-check-circle"></i>Fácil aplicación</li>
-                                    </ul>
-                                    <div class="product-footer">
-                                        <a href="https://wa.me/523331234567?text=Quiero%20cotizar%20Suaje%207.5x2.5cm"
-                                            target="_blank" class="btn-quote">
-                                            <i class="fab fa-whatsapp me-2"></i>Cotizar
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- Grupo 14mm -->
+                        <div class="measure-card"><span class="measure-text">32 x 14 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">38 x 14 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">44 x 14 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">50 x 14 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">51 x 14 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">57 x 14 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">63 x 14 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">76 x 14 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">102 x 14 mm</span></div>
 
-                        <!-- Product 7 -->
-                        <div class="col-md-6 col-lg-4">
-                            <div class="product-card">
-                                <div style="position: relative;">
-                                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&q=80"
-                                        alt="Suaje 5x5cm" class="product-image">
-                                </div>
-                                <div class="product-content">
-                                    <h5 class="product-title">Suaje 5 x 5 cm</h5>
-                                    <ul class="product-specs">
-                                        <li><i class="fas fa-ruler"></i>5 x 5 cm</li>
-                                        <li><i class="fas fa-check-circle"></i>Formato cuadrado pequeño</li>
-                                        <li><i class="fas fa-check-circle"></i>Ideal para productos pequeños</li>
-                                        <li><i class="fas fa-check-circle"></i>Diseño equilibrado</li>
-                                    </ul>
-                                    <div class="product-footer">
-                                        <a href="https://wa.me/523331234567?text=Quiero%20cotizar%20Suaje%205x5cm"
-                                            target="_blank" class="btn-quote">
-                                            <i class="fab fa-whatsapp me-2"></i>Cotizar
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- Grupo 16mm -->
+                        <div class="measure-card"><span class="measure-text">25 x 16 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">32 x 16 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">35 x 16 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">38 x 16 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">44 x 16 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">50 x 16 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">51 x 16 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">60 x 16 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">63 x 16 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">70 x 16 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">76 x 16 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">80 x 16 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">89 x 16 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">100 x 16 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">102 x 16 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">127 x 16 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">152 x 16 mm</span></div>
 
-                        <!-- Product 8 -->
-                        <div class="col-md-6 col-lg-4">
-                            <div class="product-card">
-                                <div style="position: relative;">
-                                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&q=80"
-                                        alt="Suaje 7.5x7.5cm" class="product-image">
-                                </div>
-                                <div class="product-content">
-                                    <h5 class="product-title">Suaje 7.5 x 7.5 cm</h5>
-                                    <ul class="product-specs">
-                                        <li><i class="fas fa-ruler"></i>7.5 x 7.5 cm</li>
-                                        <li><i class="fas fa-check-circle"></i>Tamaño mediano cuadrado</li>
-                                        <li><i class="fas fa-check-circle"></i>Buena área de información</li>
-                                        <li><i class="fas fa-check-circle"></i>Versátil y práctico</li>
-                                    </ul>
-                                    <div class="product-footer">
-                                        <a href="https://wa.me/523331234567?text=Quiero%20cotizar%20Suaje%207.5x7.5cm"
-                                            target="_blank" class="btn-quote">
-                                            <i class="fab fa-whatsapp me-2"></i>Cotizar
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- Grupo 18mm -->
+                        <div class="measure-card"><span class="measure-text">32 x 18 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">38 x 18 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">50 x 18 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">63 x 18 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">76 x 18 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">102 x 18 mm</span></div>
 
-                        <!-- Product 9 -->
-                        <div class="col-md-6 col-lg-4">
-                            <div class="product-card">
-                                <div style="position: relative;">
-                                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&q=80"
-                                        alt="Suaje 15x10cm" class="product-image">
-                                </div>
-                                <div class="product-content">
-                                    <h5 class="product-title">Suaje 15 x 10 cm</h5>
-                                    <ul class="product-specs">
-                                        <li><i class="fas fa-ruler"></i>15 x 10 cm</li>
-                                        <li><i class="fas fa-check-circle"></i>Tamaño grande</li>
-                                        <li><i class="fas fa-check-circle"></i>Máxima visibilidad</li>
-                                        <li><i class="fas fa-check-circle"></i>Ideal para información detallada</li>
-                                    </ul>
-                                    <div class="product-footer">
-                                        <a href="https://wa.me/523331234567?text=Quiero%20cotizar%20Suaje%2015x10cm"
-                                            target="_blank" class="btn-quote">
-                                            <i class="fab fa-whatsapp me-2"></i>Cotizar
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- Grupo 19mm -->
+                        <div class="measure-card"><span class="measure-text">25 x 19 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">32 x 19 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">38 x 19 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">44 x 19 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">50 x 19 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">51 x 19 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">63 x 19 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">70 x 19 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">76 x 19 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">89 x 19 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">102 x 19 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">127 x 19 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">152 x 19 mm</span></div>
 
-                        <!-- Product 10 -->
-                        <div class="col-md-6 col-lg-4">
-                            <div class="product-card">
-                                <div style="position: relative;">
-                                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&q=80"
-                                        alt="Suaje 20x10cm" class="product-image">
-                                </div>
-                                <div class="product-content">
-                                    <h5 class="product-title">Suaje 20 x 10 cm</h5>
-                                    <ul class="product-specs">
-                                        <li><i class="fas fa-ruler"></i>20 x 10 cm</li>
-                                        <li><i class="fas fa-check-circle"></i>Formato extra grande</li>
-                                        <li><i class="fas fa-check-circle"></i>Ideal para embalajes</li>
-                                        <li><i class="fas fa-check-circle"></i>Máximo espacio de diseño</li>
-                                    </ul>
-                                    <div class="product-footer">
-                                        <a href="https://wa.me/523331234567?text=Quiero%20cotizar%20Suaje%2020x10cm"
-                                            target="_blank" class="btn-quote">
-                                            <i class="fab fa-whatsapp me-2"></i>Cotizar
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- Grupo 22mm -->
+                        <div class="measure-card"><span class="measure-text">25 x 22 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">32 x 22 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">38 x 22 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">44 x 22 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">50 x 22 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">51 x 22 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">63 x 22 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">70 x 22 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">76 x 22 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">89 x 22 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">102 x 22 mm</span></div>
 
-                        <!-- Product 11 -->
-                        <div class="col-md-6 col-lg-4">
-                            <div class="product-card">
-                                <div style="position: relative;">
-                                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&q=80"
-                                        alt="Suaje 10x15cm" class="product-image">
-                                </div>
-                                <div class="product-content">
-                                    <h5 class="product-title">Suaje 10 x 15 cm</h5>
-                                    <ul class="product-specs">
-                                        <li><i class="fas fa-ruler"></i>10 x 15 cm</li>
-                                        <li><i class="fas fa-check-circle"></i>Formato vertical</li>
-                                        <li><i class="fas fa-check-circle"></i>Excelente para etiquetas colgantes</li>
-                                        <li><i class="fas fa-check-circle"></i>Gran área de impresión</li>
-                                    </ul>
-                                    <div class="product-footer">
-                                        <a href="https://wa.me/523331234567?text=Quiero%20cotizar%20Suaje%2010x15cm"
-                                            target="_blank" class="btn-quote">
-                                            <i class="fab fa-whatsapp me-2"></i>Cotizar
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- Grupo 25mm -->
+                        <div class="measure-card"><span class="measure-text">25 x 25 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">32 x 25 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">38 x 25 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">44 x 25 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">50 x 25 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">51 x 25 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">57 x 25 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">63 x 25 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">70 x 25 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">76 x 25 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">89 x 25 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">102 x 25 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">127 x 25 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">152 x 25 mm</span></div>
 
-                        <!-- Product 12 -->
-                        <div class="col-md-6 col-lg-4">
-                            <div class="product-card">
-                                <div style="position: relative;">
-                                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&q=80"
-                                        alt="Suaje 10x20cm" class="product-image">
-                                </div>
-                                <div class="product-content">
-                                    <h5 class="product-title">Suaje 10 x 20 cm</h5>
-                                    <ul class="product-specs">
-                                        <li><i class="fas fa-ruler"></i>10 x 20 cm</li>
-                                        <li><i class="fas fa-check-circle"></i>Formato vertical largo</li>
-                                        <li><i class="fas fa-check-circle"></i>Ideal para etiquetas informativas</li>
-                                        <li><i class="fas fa-check-circle"></i>Máxima capacidad de contenido</li>
-                                    </ul>
-                                    <div class="product-footer">
-                                        <a href="https://wa.me/523331234567?text=Quiero%20cotizar%20Suaje%2010x20cm"
-                                            target="_blank" class="btn-quote">
-                                            <i class="fab fa-whatsapp me-2"></i>Cotizar
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- Grupo 28mm -->
+                        <div class="measure-card"><span class="measure-text">32 x 28 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">38 x 28 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">50 x 28 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">51 x 28 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">63 x 28 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">76 x 28 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">102 x 28 mm</span></div>
+
+                        <!-- Grupo 31mm -->
+                        <div class="measure-card"><span class="measure-text">32 x 31 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">38 x 31 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">44 x 31 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">50 x 31 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">51 x 31 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">57 x 31 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">63 x 31 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">70 x 31 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">76 x 31 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">89 x 31 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">102 x 31 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">127 x 31 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">152 x 31 mm</span></div>
+
+                        <!-- Grupo 35mm -->
+                        <div class="measure-card"><span class="measure-text">38 x 35 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">50 x 35 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">51 x 35 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">63 x 35 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">76 x 35 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">102 x 35 mm</span></div>
+
+                        <!-- Grupo 38mm -->
+                        <div class="measure-card"><span class="measure-text">38 x 38 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">50 x 38 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">51 x 38 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">63 x 38 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">76 x 38 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">102 x 38 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">127 x 38 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">152 x 38 mm</span></div>
+
+                        <!-- Grupo 44mm -->
+                        <div class="measure-card"><span class="measure-text">50 x 44 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">51 x 44 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">63 x 44 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">76 x 44 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">102 x 44 mm</span></div>
+
+                        <!-- Grupo 50mm -->
+                        <div class="measure-card"><span class="measure-text">50 x 50 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">51 x 50 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">63 x 50 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">76 x 50 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">89 x 50 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">102 x 50 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">127 x 50 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">152 x 50 mm</span></div>
+
+                        <!-- Grupo 57mm -->
+                        <div class="measure-card"><span class="measure-text">63 x 57 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">76 x 57 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">102 x 57 mm</span></div>
+
+                        <!-- Grupo 63mm -->
+                        <div class="measure-card"><span class="measure-text">63 x 63 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">76 x 63 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">102 x 63 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">127 x 63 mm</span></div>
+
+                        <!-- Grupo 76mm -->
+                        <div class="measure-card"><span class="measure-text">76 x 76 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">102 x 76 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">127 x 76 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">152 x 76 mm</span></div>
+
+                        <!-- Grandes -->
+                        <div class="measure-card"><span class="measure-text">102 x 89 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">102 x 102 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">127 x 102 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">152 x 102 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">102 x 127 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">152 x 127 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">102 x 152 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">152 x 152 mm</span></div>
                     </div>
                 </div>
+
+                <!-- Círculo -->
+                <div class="tab-pane fade" id="circulo" role="tabpanel" aria-labelledby="circulo-tab">
+                    <div class="text-center mb-4">
+                        <i class="far fa-circle category-icon"></i>
+                        <h4 class="text-primary">Medidas Circulares</h4>
+                    </div>
+                    <div class="measures-grid">
+                        <div class="measure-card"><span class="measure-text">20 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">25 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">31 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">38 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">41 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">50 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">51 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">69 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">71 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">96 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">102 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">136 mm</span></div>
+                    </div>
+                </div>
+
+                <!-- Óvalo -->
+                <div class="tab-pane fade" id="ovalo" role="tabpanel" aria-labelledby="ovalo-tab">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-egg category-icon"></i>
+                        <h4 class="text-primary">Medidas Ovaladas</h4>
+                    </div>
+                    <div class="measures-grid">
+                        <div class="measure-card"><span class="measure-text">11 x 17 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">14 x 21 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">16 x 23 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">18 x 24 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">18 x 25 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">20 x 25 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">21 x 14 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">23 x 38 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">24 x 17 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">24 x 29 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">24 x 159 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">25 x 32 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">38 x 51 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">51 x 73 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">56 x 117 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">72 x 114 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">78 x 130 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">89 x 63 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">110 x 167 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">160 x 299 mm</span></div>
+                    </div>
+                </div>
+
+                <!-- Cartulina -->
+                <div class="tab-pane fade" id="cartulina" role="tabpanel" aria-labelledby="cartulina-tab">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-scroll category-icon"></i>
+                        <h4 class="text-primary">Medidas para Cartulina</h4>
+                    </div>
+                    <div class="measures-grid">
+                        <div class="measure-card"><span class="measure-text">25 x 226 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">25 x 254 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">32 x 51 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">38 x 64 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">76 x 51 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">85 x 140 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">102 x 30 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">102 x 102 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">102 x 152 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">102 x 235 mm</span></div>
+                    </div>
+                </div>
+
+                <!-- Nylon -->
+                <div class="tab-pane fade" id="nylon" role="tabpanel" aria-labelledby="nylon-tab">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-tag category-icon"></i>
+                        <h4 class="text-primary">Medidas para Nylon</h4>
+                    </div>
+                    <div class="measures-grid">
+                        <div class="measure-card"><span class="measure-text">20 x 90 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">32 x 51 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">32 x 63 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">32 x 90 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">34 x 54 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">76 x 30 mm</span></div>
+                        <div class="measure-card"><span class="measure-text">112 x 27 mm</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="text-center mt-5">
+                <p class="lead mb-4">¿No encuentras la medida que buscas?</p>
+                <a href="https://wa.me/523314179249?text=Hola,%20busco%20un%20suaje%20con%20medida%20especial"
+                    target="_blank" class="btn btn-navy btn-lg">
+                    <i class="fab fa-whatsapp me-2"></i>Cotizar Medida Especial
+                </a>
             </div>
         </div>
     </main>
@@ -936,10 +1100,10 @@
                         <ul class="social-icons">
                             <li class="d-none"><a href="#!"><i class="fab fa-facebook-f icon"></i></a></li>
                             <li class="d-none"><a href="#!"><i class="fab fa-instagram icon"></i></a></li>
-                            <li><a href="https://wa.me/523331234567" target="_blank"><i
+                            <li><a href="https://wa.me/523314179249" target="_blank"><i
                                         class="fab fa-whatsapp icon"></i></a></li>
                             <li class="d-none"><a href="#!"><i class="fab fa-linkedin-in icon"></i></a></li>
-                            <li><a href="tel:+523331234567" target="_blank"><i class="fas fa-phone icon"></i></a></li>
+                            <li><a href="tel:+523333309583" target="_blank"><i class="fas fa-phone icon"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -968,14 +1132,14 @@
                                     href="mailto:contacto@govetiquetas.com.mx"
                                     class="text-white">contacto@govetiquetas.com.mx</a></span></li>
                         <li class="mb-3"><span class="fa-li"><i class="fas fa-phone"></i></span><span class="ms-2"><a
-                                    href="tel:+523331234567" class="text-white">(33) 3123-4567</a></span></li>
+                                    href="tel:+523333309583" class="text-white">(33) 3330-9583</a></span></li>
                         <li class="mb-3"><span class="fa-li"><i class="fab fa-whatsapp"></i></span><span class="ms-2"><a
-                                    href="https://wa.me/523331234567" class="text-white" target="_blank">WhatsApp -
+                                    href="https://wa.me/523314179249" class="text-white" target="_blank">WhatsApp -
                                     Respuesta inmediata</a></span></li>
                     </ul>
                     <div class="mt-4">
                         <h6 class="text-uppercase mb-3">Horario de Atención</h6>
-                        <p class="mb-1"><i class="fas fa-clock me-2"></i>Lunes - Viernes: 9:00 AM - 6:00 PM</p>
+                        <p class="mb-1"><i class="fas fa-clock me-2"></i>Lunes - Viernes: 9:00 AM - 5:00 PM</p>
                     </div>
                 </div>
             </div>
@@ -986,6 +1150,9 @@
         <span class="modal-close">&times;</span>
         <img class="modal-content-img" id="modalImage">
     </div>
+
+    <!-- MDB5 JS -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"></script>
 
     <script>
         // Image Modal Script
