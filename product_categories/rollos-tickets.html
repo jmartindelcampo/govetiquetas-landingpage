@@ -73,10 +73,9 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
+            height: 40px;
             border-top: 2px solid white;
             border-bottom: 2px solid white;
-            transform: scaleY(2);
             opacity: 0;
             transition: .3s;
         }
@@ -84,8 +83,8 @@
         .nav-link:after {
             content: '';
             position: absolute;
-            top: 2px;
-            left: 0;
+            top: -2px;
+            left: -4px;
             width: 100%;
             height: 100%;
             background-color: white;
@@ -107,6 +106,49 @@
         .nav-link:hover:after {
             transform: scaleY(1);
             opacity: 1;
+        }
+
+        .navbar-brand {
+            font-size: 1.75rem;
+            letter-spacing: 3px;
+            font-weight: 700;
+        }
+
+        @media (max-width: 991.98px) {
+            .navbar-collapse {
+                background-color: rgba(10, 38, 71, 0.98);
+                padding: 20px;
+                max-height: 80vh;
+                overflow-y: auto;
+            }
+
+            .dropdown-menu {
+                position: static !important;
+                float: none;
+                width: auto;
+                background-color: transparent;
+                border: none;
+                box-shadow: none;
+                padding-left: 20px;
+                margin-top: 0;
+                transform: none !important;
+            }
+
+            .dropdown-item {
+                color: rgba(255, 255, 255, 0.8) !important;
+                padding: 8px 15px;
+            }
+
+            .dropdown-item:hover,
+            .dropdown-item:focus {
+                background-color: rgba(255, 255, 255, 0.1);
+                color: white !important;
+            }
+
+            .nav-link {
+                color: white !important;
+                padding: 10px 0 !important;
+            }
         }
 
         /* WhatsApp Float Button */
@@ -506,7 +548,7 @@
                             <a class="nav-link" href="../index.html#servicios">Servicios</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown" href="#" id="navbarDropdown" role="button"
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-mdb-toggle="dropdown" aria-expanded="false">
                                 Productos
                             </a>
@@ -527,6 +569,8 @@
                                         href="../product_categories/despachadores-cintas.html">Despachadores de
                                         Cintas</a>
                                 </li>
+                                <li><a class="dropdown-item"
+                                        href="../product_categories/suajes-personalizados.html">Suajes</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
@@ -866,14 +910,54 @@
             const toggler = document.querySelector('.navbar-toggler');
             const collapse = document.getElementById('navbarSupportedContent');
 
-            if (toggler && collapse) {
-                toggler.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    collapse.classList.toggle('show');
-                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
-                    this.setAttribute('aria-expanded', String(!isExpanded));
+            if (!toggler || !collapse) return;
+
+            // Helper to get or create MDB Collapse instance
+            const getCollapseInstance = () => {
+                let instance = mdb.Collapse.getInstance(collapse);
+                if (!instance) {
+                    instance = new mdb.Collapse(collapse, {
+                        toggle: false
+                    });
+                }
+                return instance;
+            };
+
+            // Manual toggle listener
+            toggler.addEventListener('click', function (e) {
+                e.preventDefault();
+                const instance = getCollapseInstance();
+                instance.toggle();
+
+                // Manually update aria-expanded if MDB doesn't do it automatically in this mode
+                const isExpanded = toggler.getAttribute('aria-expanded') === 'true';
+                toggler.setAttribute('aria-expanded', String(!isExpanded));
+            });
+
+            // Close on link click
+            const navLinks = collapse.querySelectorAll('.nav-link:not(.dropdown-toggle)');
+            navLinks.forEach(function (link) {
+                link.addEventListener('click', function () {
+                    const togglerVisible = window.getComputedStyle(toggler).display !== 'none';
+                    if (togglerVisible && collapse.classList.contains('show')) {
+                        const instance = getCollapseInstance();
+                        instance.hide();
+                        toggler.setAttribute('aria-expanded', 'false');
+                    }
                 });
-            }
+            });
+
+            // Close on click outside
+            document.addEventListener('click', function (evt) {
+                const target = evt.target;
+                if (collapse.classList.contains('show') &&
+                    !collapse.contains(target) &&
+                    !toggler.contains(target)) {
+                    const instance = getCollapseInstance();
+                    instance.hide();
+                    toggler.setAttribute('aria-expanded', 'false');
+                }
+            });
 
             // Modal Logic
             const modal = document.getElementById('imageModal');
